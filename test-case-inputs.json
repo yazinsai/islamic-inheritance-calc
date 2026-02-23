@@ -1,0 +1,696 @@
+{
+  "1": {
+    "Wife": 1,
+    "Son": 1
+  },
+  "2": {
+    "Husband": 1,
+    "Mother": 1,
+    "MaternalBrother": 1,
+    "FullUncle": 1
+  },
+  "3": {
+    "Daughter": 1,
+    "FullSister": 2
+  },
+  "4": {
+    "Daughter": 2,
+    "PaternalSister": 1
+  },
+  "5": {
+    "Daughter": 1,
+    "GrandDaughter": 1,
+    "FullSister": 2
+  },
+  "6": {
+    "Father": 1,
+    "FullBrother": 1
+  },
+  "7": {
+    "Wife": 1,
+    "Son": 1,
+    "Mother": 1
+  },
+  "8": {
+    "Husband": 1,
+    "FullSister": 2
+  },
+  "9": {
+    "Husband": 1,
+    "Father": 1,
+    "Mother": 1
+  },
+  "10": {
+    "Wife": 1,
+    "Father": 1,
+    "Mother": 1
+  },
+  "11": {
+    "Husband": 1,
+    "Mother": 1,
+    "FullBrother": 2,
+    "MaternalBrother": 2
+  },
+  "12": {
+    "Daughter": 2
+  },
+  "13": {
+    "Mother": 1,
+    "FullSister": 1
+  },
+  "14": {
+    "PaternalGrandMother": 1,
+    "FullSister": 1,
+    "MaternalBrother": 1
+  },
+  "15": {
+    "Daughter": 1,
+    "GrandDaughter": 2
+  },
+  "16": {
+    "Mother": 1,
+    "MaternalBrother": 3
+  },
+  "17": {
+    "Wife": 1,
+    "FullSister": 2
+  },
+  "18": {
+    "Wife": 1,
+    "Daughter": 1,
+    "Mother": 1
+  },
+  "19": {
+    "Wife": 1,
+    "Mother": 1,
+    "MaternalBrother": 1
+  },
+  "20": {
+    "Wife": 2,
+    "PaternalGrandMother": 1,
+    "MaternalGrandMother": 1,
+    "MaternalBrother": 2
+  },
+  "21": {
+    "Wife": 1,
+    "Daughter": 1,
+    "Mother": 1,
+    "FullBrother": 1
+  },
+  "22": {
+    "Son": 1,
+    "Mother": 1,
+    "PaternalGrandMother": 1,
+    "FullUncle": 1
+  },
+  "23": {
+    "Wife": 1,
+    "Mother": 1,
+    "FullUncle": 1
+  },
+  "24": {
+    "Wife": 1,
+    "Son": 1,
+    "Mother": 1,
+    "FullUncle": 1
+  },
+  "25": {
+    "Wife": 1,
+    "Daughter": 1,
+    "Mother": 1,
+    "FullUncle": 1
+  },
+  "26": {
+    "Wife": 1,
+    "Son": 2,
+    "Mother": 1,
+    "FullUncle": 1
+  },
+  "27": {
+    "Wife": 1,
+    "Son": 1,
+    "Daughter": 1,
+    "Mother": 1,
+    "FullUncle": 1
+  },
+  "28": {
+    "Wife": 1,
+    "Daughter": 2,
+    "Mother": 1,
+    "FullUncle": 1
+  },
+  "29": {},
+  "30": {
+    "Husband": 1,
+    "Son": 1
+  },
+  "31": {
+    "Husband": 1,
+    "Son": 1,
+    "Daughter": 1
+  },
+  "32": {
+    "Husband": 1,
+    "FullBrother": 1,
+    "FullSister": 1
+  },
+  "33": {
+    "Daughter": 2,
+    "Father": 1,
+    "Mother": 1
+  },
+  "34": {
+    "Daughter": 2,
+    "MaternalBrother": 2
+  },
+  "35": {
+    "Son": 3
+  },
+  "36": {
+    "Son": 1,
+    "Daughter": 2
+  },
+  "37": {
+    "FullBrother": 2,
+    "FullSister": 1
+  },
+  "38": {
+    "Father": 1,
+    "Mother": 1,
+    "FullSister": 2
+  },
+  "39": {
+    "Husband": 1,
+    "FullSister": 1
+  },
+  "40": {
+    "Wife": 1,
+    "Daughter": 1,
+    "Mother": 1,
+    "FullUncle": 1
+  },
+  "41": {
+    "Husband": 1,
+    "Daughter": 1,
+    "Father": 1
+  },
+  "42": {
+    "Husband": 1,
+    "GrandDaughter": 1,
+    "FullCousin": 1
+  },
+  "43": {
+    "Mother": 1,
+    "FullBrother": 2
+  },
+  "44": {
+    "Mother": 1,
+    "PaternalBrother": 1,
+    "MaternalBrother": 1
+  },
+  "45": {
+    "Wife": 2,
+    "Mother": 1,
+    "FullNephew": 1
+  },
+  "46": {
+    "Wife": 1,
+    "Daughter": 2,
+    "PaternalCousinsGrandSon": 1
+  },
+  "47": {
+    "Daughter": 1,
+    "GrandSon": 1
+  },
+  "48": {
+    "Daughter": 1,
+    "PaternalCousinsGrandSon": 1
+  },
+  "49": {
+    "Husband": 1,
+    "PaternalGrandMother": 1,
+    "MaternalBrother": 1,
+    "FullUncle": 1
+  },
+  "50": {
+    "Wife": 1,
+    "Father": 1
+  },
+  "51": {
+    "Wife": 1,
+    "Son": 1,
+    "Father": 1
+  },
+  "52": {
+    "Wife": 1,
+    "Daughter": 1,
+    "FullBrother": 1
+  },
+  "53": {
+    "Mother": 1,
+    "FullBrother": 1,
+    "MaternalBrother": 1
+  },
+  "54": {
+    "Daughter": 1,
+    "Mother": 1,
+    "PaternalBrother": 1
+  },
+  "55": {
+    "Wife": 1,
+    "Daughter": 1,
+    "Father": 1
+  },
+  "56": {
+    "Husband": 1,
+    "Mother": 1,
+    "FullBrother": 1
+  },
+  "57": {
+    "Wife": 1,
+    "Son": 1,
+    "Mother": 1
+  },
+  "58": {
+    "Wife": 1,
+    "Son": 1,
+    "Father": 1,
+    "Mother": 1
+  },
+  "59": {
+    "Wife": 1,
+    "Daughter": 1,
+    "Mother": 1,
+    "FullBrother": 1
+  },
+  "60": {
+    "Wife": 1,
+    "Daughter": 1,
+    "Father": 1,
+    "Mother": 1,
+    "FullBrother": 1
+  },
+  "61": {
+    "Wife": 1,
+    "Daughter": 1,
+    "GrandDaughter": 1,
+    "Mother": 1,
+    "FullBrother": 1
+  },
+  "62": {
+    "Wife": 1,
+    "Daughter": 3,
+    "PaternalGrandMother": 1,
+    "FullBrother": 1
+  },
+  "63": {
+    "Wife": 1,
+    "Daughter": 3,
+    "FullBrother": 1
+  },
+  "64": {
+    "Daughter": 3,
+    "PaternalUncle": 1
+  },
+  "65": {
+    "Wife": 2,
+    "FullSister": 3,
+    "PaternalBrother": 3
+  },
+  "66": {
+    "Wife": 2,
+    "PaternalGrandMother": 3,
+    "MaternalBrother": 3,
+    "FullUncle": 2
+  },
+  "67": {
+    "Son": 1,
+    "Daughter": 1
+  },
+  "68": {
+    "FullBrother": 1,
+    "FullSister": 1
+  },
+  "69": {
+    "Son": 1,
+    "Daughter": 2,
+    "Father": 1
+  },
+  "70": {
+    "Wife": 1,
+    "PaternalBrother": 1,
+    "PaternalSister": 1
+  },
+  "71": {
+    "Mother": 1,
+    "FullBrother": 1,
+    "FullSister": 2
+  },
+  "72": {
+    "Daughter": 2,
+    "GrandSon": 1,
+    "GrandDaughter": 1
+  },
+  "73": {
+    "Husband": 1,
+    "GrandSon": 1,
+    "GrandDaughter": 2
+  },
+  "74": {
+    "FullUncle": 1
+  },
+  "75": {
+    "PaternalCousinsGrandSon": 1
+  },
+  "76": {
+    "Son": 3,
+    "Daughter": 1
+  },
+  "77": {
+    "Wife": 1,
+    "Son": 3,
+    "Daughter": 1
+  },
+  "78": {
+    "Wife": 1,
+    "Son": 1,
+    "Daughter": 1
+  },
+  "79": {
+    "Husband": 1,
+    "Son": 1,
+    "Daughter": 1
+  },
+  "80": {
+    "Husband": 1,
+    "PaternalBrother": 1,
+    "PaternalSister": 1
+  },
+  "81": {
+    "Son": 1,
+    "Daughter": 2,
+    "Mother": 1
+  },
+  "82": {
+    "Wife": 1,
+    "Son": 1,
+    "Daughter": 2,
+    "Mother": 1
+  },
+  "83": {
+    "Daughter": 2,
+    "GrandSon": 3,
+    "GrandDaughter": 2
+  },
+  "84": {
+    "Husband": 1,
+    "FullSister": 1,
+    "PaternalBrother": 1,
+    "PaternalSister": 1
+  },
+  "85": {
+    "Wife": 2,
+    "Son": 1,
+    "Daughter": 1,
+    "Mother": 1
+  },
+  "86": {
+    "Wife": 1,
+    "GrandSon": 1,
+    "GrandDaughter": 1,
+    "Father": 1,
+    "Mother": 1
+  },
+  "87": {
+    "Husband": 1,
+    "Daughter": 1,
+    "Mother": 1,
+    "FullSister": 1
+  },
+  "88": {
+    "Wife": 1,
+    "Daughter": 2,
+    "FullSister": 1
+  },
+  "89": {
+    "GrandDaughter": 2,
+    "FullSister": 3
+  },
+  "90": {
+    "Daughter": 1,
+    "GrandDaughter": 1,
+    "FullSister": 2
+  },
+  "91": {
+    "Daughter": 3,
+    "FullSister": 3
+  },
+  "92": {
+    "Daughter": 1,
+    "GrandDaughter": 1,
+    "Mother": 1,
+    "PaternalSister": 2
+  },
+  "93": {
+    "Wife": 2,
+    "FullBrother": 3,
+    "FullSister": 1
+  },
+  "94": {
+    "Wife": 1,
+    "Daughter": 1,
+    "FullBrother": 1,
+    "FullUncle": 1
+  },
+  "95": {
+    "Mother": 1,
+    "PaternalGrandMother": 1,
+    "FullBrother": 1,
+    "PaternalBrother": 1
+  },
+  "96": {
+    "Wife": 1,
+    "FullBrother": 2,
+    "FullSister": 1,
+    "FullUncle": 1
+  },
+  "97": {
+    "Wife": 2,
+    "Daughter": 1,
+    "Father": 1,
+    "GrandFather": 1,
+    "FullBrother": 1
+  },
+  "98": {
+    "Husband": 1,
+    "Mother": 1,
+    "FullBrother": 1,
+    "FullSister": 1,
+    "FullUncle": 1
+  },
+  "99": {
+    "Son": 1,
+    "Father": 1,
+    "Mother": 1,
+    "FullBrother": 1
+  },
+  "100": {
+    "Wife": 1,
+    "Son": 1,
+    "Father": 1,
+    "PaternalNephew": 1
+  },
+  "101": {
+    "Husband": 1,
+    "FullSister": 1,
+    "PaternalSister": 1
+  },
+  "102": {
+    "FullBrother": 1,
+    "PaternalBrother": 1,
+    "PaternalSister": 1
+  },
+  "103": {
+    "Daughter": 1,
+    "FullSister": 2,
+    "PaternalBrother": 1
+  },
+  "104": {
+    "Daughter": 2,
+    "FullSister": 3,
+    "FullNephew": 1
+  },
+  "105": {
+    "Daughter": 1,
+    "GrandDaughter": 1,
+    "Mother": 1,
+    "PaternalSister": 2,
+    "FullUncle": 1
+  },
+  "106": {
+    "Husband": 1,
+    "Son": 2,
+    "Daughter": 1,
+    "Father": 1,
+    "Mother": 1,
+    "GrandFather": 1,
+    "FullBrother": 1
+  },
+  "107": {
+    "Husband": 1,
+    "PaternalGrandMother": 1,
+    "FullSister": 1
+  },
+  "108": {
+    "Husband": 1,
+    "Mother": 1,
+    "FullSister": 1
+  },
+  "109": {
+    "Husband": 1,
+    "PaternalSister": 2,
+    "MaternalBrother": 2
+  },
+  "110": {
+    "Husband": 1,
+    "Mother": 1,
+    "FullSister": 1,
+    "PaternalSister": 1,
+    "MaternalSister": 1
+  },
+  "111": {
+    "Husband": 1,
+    "Mother": 1,
+    "FullSister": 1,
+    "PaternalSister": 1,
+    "MaternalSister": 2
+  },
+  "112": {
+    "Husband": 1,
+    "Daughter": 2,
+    "Mother": 1
+  },
+  "113": {
+    "Wife": 1,
+    "Mother": 1,
+    "PaternalSister": 2
+  },
+  "114": {
+    "Wife": 1,
+    "FullSister": 2,
+    "MaternalBrother": 2
+  },
+  "115": {
+    "Husband": 1,
+    "Daughter": 2,
+    "Father": 1,
+    "Mother": 1
+  },
+  "116": {
+    "Wife": 1,
+    "Mother": 1,
+    "PaternalSister": 2,
+    "MaternalBrother": 2
+  },
+  "117": {
+    "Wife": 1,
+    "Daughter": 2,
+    "Father": 1,
+    "Mother": 1
+  },
+  "118": {
+    "Daughter": 3
+  },
+  "119": {
+    "Husband": 1,
+    "Mother": 1
+  },
+  "120": {
+    "Wife": 1,
+    "PaternalGrandMother": 1,
+    "MaternalSister": 2
+  },
+  "121": {
+    "Wife": 1,
+    "Daughter": 2,
+    "Mother": 1
+  },
+  "122": {
+    "Husband": 1,
+    "Mother": 1,
+    "FullSister": 1,
+    "PaternalSister": 1,
+    "MaternalSister": 1
+  },
+  "123": {
+    "Wife": 1,
+    "Father": 1,
+    "Mother": 1,
+    "FullUncle": 1
+  },
+  "124": {
+    "Husband": 1,
+    "PaternalGrandMother": 1,
+    "MaternalBrother": 1,
+    "PaternalCousin": 1
+  },
+  "125": {
+    "Wife": 1,
+    "Father": 1,
+    "Mother": 1,
+    "MaternalBrother": 2
+  },
+  "126": {
+    "Husband": 1,
+    "Mother": 1,
+    "GrandFather": 1
+  },
+  "127": {
+    "Husband": 1,
+    "Mother": 1,
+    "PaternalBrother": 2,
+    "MaternalBrother": 2
+  },
+  "128": {
+    "Husband": 1,
+    "FullSister": 1,
+    "PaternalSister": 1
+  },
+  "129": {
+    "Husband": 1,
+    "FullSister": 1,
+    "PaternalBrother": 1,
+    "PaternalSister": 1
+  },
+  "130": {
+    "GrandFather": 1,
+    "FullBrother": 3
+  },
+  "131": {
+    "Wife": 1,
+    "Daughter": 2,
+    "Mother": 1,
+    "GrandFather": 1,
+    "PaternalBrother": 1
+  },
+  "132": {
+    "Mother": 1,
+    "GrandFather": 1,
+    "FullSister": 1,
+    "PaternalBrother": 1,
+    "PaternalSister": 1
+  },
+  "133": {
+    "Husband": 1,
+    "Daughter": 1,
+    "GrandDaughter": 1,
+    "GrandFather": 1,
+    "FullBrother": 1
+  },
+  "134": {
+    "Husband": 1,
+    "Mother": 1,
+    "GrandFather": 1,
+    "FullSister": 1
+  }
+}

@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sand-50: #faf8f5;
+  --color-sand-100: #f3efe8;
+  --color-sand-200: #e8e0d4;
+  --color-sand-300: #d4c8b4;
+  --color-sand-400: #bda88e;
+  --color-sand-500: #a68d72;
+  --color-sand-600: #8a7460;
+  --color-sand-700: #6e5c4e;
+  --color-sand-800: #5a4c42;
+  --color-sand-900: #4a3f38;
+  --color-sand-950: #2d2620;
+
+  --color-sage-50: #f4f6f3;
+  --color-sage-100: #e4e9e1;
+  --color-sage-200: #c9d3c5;
+  --color-sage-300: #a3b49c;
+  --color-sage-400: #7e9575;
+  --color-sage-500: #5f7a57;
+  --color-sage-600: #4a6143;
+  --color-sage-700: #3c4e37;
+  --color-sage-800: #33402f;
+  --color-sage-900: #2b3528;
+  --color-sage-950: #151c14;
+
+  --color-gold-50: #fdf9ef;
+  --color-gold-100: #faf0d5;
+  --color-gold-200: #f4dfa9;
+  --color-gold-300: #edc873;
+  --color-gold-400: #e6b048;
+  --color-gold-500: #dd9726;
+  --color-gold-600: #c4761c;
+  --color-gold-700: #a3571a;
+  --color-gold-800: #85451c;
+  --color-gold-900: #6e3a1a;
+  --color-gold-950: #3e1d0b;
+
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", "Menlo", monospace;
+}
+
+/* Islamic geometric pattern as SVG background */
+.geometric-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4c8b4' stroke-width='0.5' opacity='0.3'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30Z'/%3E%3Cpath d='M30 20 L40 30 L30 40 L20 30Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.geometric-border {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='8' viewBox='0 0 40 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4 L5 0 L10 4 L15 0 L20 4 L25 0 L30 4 L35 0 L40 4' fill='none' stroke='%23c4761c' stroke-width='1' opacity='0.4'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+  height: 8px;
+}
+
+/* Fraction display */
+.fraction {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  font-family: var(--font-mono);
+  line-height: 1;
+  margin: 0 0.15em;
+}
+
+.fraction .num {
+  border-bottom: 1.5px solid currentColor;
+  padding: 0 0.2em 0.1em;
+  font-size: 0.85em;
+}
+
+.fraction .den {
+  padding: 0.1em 0.2em 0;
+  font-size: 0.85em;
+}
+
+/* Number input styling */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Smooth section transitions */
+.section-enter {
+  animation: sectionIn 0.35s ease-out;
+}
+
+@keyframes sectionIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Results card entrance */
+.result-card {
+  animation: cardIn 0.4s ease-out both;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Share bar animation */
+.share-bar {
+  animation: barGrow 0.6s ease-out both;
+}
+
+@keyframes barGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-sand-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sand-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sand-400);
+}

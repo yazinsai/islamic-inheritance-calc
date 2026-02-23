@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+*.md
+test-cases.json
+test-case-inputs.json
+test-cases-summary.md
+fetch-test-cases.py
+spec.md
+src/__tests__
+vitest.config.ts
+.claude

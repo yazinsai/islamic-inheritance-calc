@@ -1,0 +1,30 @@
+{
+  "name": "islamic-inheritance-calc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "fraction.js": "^5.3.4",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
+    "@vitejs/plugin-react": "^5.1.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.2.0",
+    "vitest": "^4.0.18"
+  }
+}

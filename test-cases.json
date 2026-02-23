@@ -1,0 +1,6559 @@
+[
+  {
+    "id": 1,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "7/8",
+        "percentage": "87.5%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "7/8",
+        "percentage": "87.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 7/8 (Rule 14)."
+    ]
+  },
+  {
+    "id": 2,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/6",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Maternal Brother gets the prescribed share of 1/6 (Rule 12a)."
+    ]
+  },
+  {
+    "id": 3,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 1/2 (Rule 14)."
+    ]
+  },
+  {
+    "id": 4,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalSister is the only heir remaining receiving share of 1/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 5,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "1/6",
+        "percentage": "16.66%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "1/6",
+        "percentage": "16.66%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Daughter gets the prescribed share of 1/6 (Rule 4c).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 1/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 6,
+    "shares_by_category": [
+      {
+        "heir": "Father",
+        "fraction": "1/1",
+        "percentage": "100%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0/1",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "FullBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Father blocks FullBrother from receiving any share. (Rule 13)",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 1/1 (Rule 14)."
+    ]
+  },
+  {
+    "id": 7,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 17/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 8,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "4/7",
+        "percentage": "57.14%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "2/7",
+        "percentage": "28.57%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "2/7",
+        "percentage": "28.57%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Full Sister gets the prescribed share of 2/3 (Rule 10b).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 9,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 1/6 (Rule 14).",
+      "Umar's case detected. Special rules need to be applied for parent's share calculation (Rule 21).",
+      "Father gets the share of 1/3 and Mother gets the share of 1/6 (Rule 21)"
+    ]
+  },
+  {
+    "id": 10,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 5/12 (Rule 14).",
+      "Umar's case detected. Special rules need to be applied for parent's share calculation (Rule 21).",
+      "Father gets the share of 1/2 and Mother gets the share of 1/4 (Rule 21)"
+    ]
+  },
+  {
+    "id": 11,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother 1",
+        "fraction": "1/12",
+        "percentage": "8.34%"
+      },
+      {
+        "heir": "FullBrother 2",
+        "fraction": "1/12",
+        "percentage": "8.34%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "1/12",
+        "percentage": "8.34%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "1/12",
+        "percentage": "8.34%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Full Brothers (Share of 0/6) is receving less than Maternal Brothers (Share of 1/3). Need to recalculate their shares (Rule 22).",
+      "Full Brothers now gets the share of while the Maternal Brothers now gets the share of 1/6) (Rule 22)."
+    ]
+  },
+  {
+    "id": 12,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/1",
+        "percentage": "100%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 13,
+    "shares_by_category": [
+      {
+        "heir": "Mother",
+        "fraction": "2/5",
+        "percentage": "40%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/5",
+        "percentage": "60%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Mother",
+        "fraction": "2/5",
+        "percentage": "40%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/5",
+        "percentage": "60%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 14,
+    "shares_by_category": [
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/5",
+        "percentage": "20%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/5",
+        "percentage": "60%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/5",
+        "percentage": "20%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/5",
+        "percentage": "20%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/5",
+        "percentage": "60%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/5",
+        "percentage": "20%"
+      }
+    ],
+    "calculation_steps": [
+      "Paternal Grandmother gets the prescribed share of 1/6 (Rule 8a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Maternal Brother gets the prescribed share of 1/6 (Rule 12a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 15,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "3/4",
+        "percentage": "75%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "3/4",
+        "percentage": "75%"
+      },
+      {
+        "heir": "GrandDaughter 1",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "GrandDaughter 2",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Daughter gets the prescribed share of 1/6 (Rule 4c).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 16,
+    "shares_by_category": [
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "MaternalBrother 3",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 17,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/4",
+        "percentage": "75%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Full Sister gets the prescribed share of 2/3 (Rule 10b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 18,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "21/32",
+        "percentage": "65.62%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "7/32",
+        "percentage": "21.88%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "21/32",
+        "percentage": "65.62%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "7/32",
+        "percentage": "21.88%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 19,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Maternal Brother gets the prescribed share of 1/6 (Rule 12a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 20,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "MaternalGrandMother",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife 1",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Wife 2",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "MaternalGrandMother",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Pateral Grandmother gets the prescribed share of 1/12 (Rule 8b).",
+      "Maternal Grandmother gets the prescribed share of 1/12 (Rule 9b).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 21,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 5/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 22,
+    "shares_by_category": [
+      {
+        "heir": "Son",
+        "fraction": "5/6",
+        "percentage": "83.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "0/6",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/6",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Son",
+        "fraction": "5/6",
+        "percentage": "83.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Son blocks FullUncle from receiving any share. (Rule 13)",
+      "Mother blocks PaternalGrandMother from receiving any share. (Rule 13)",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 5/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 23,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullUncle is the only heir remaining receiving share of 5/12 (Rule 14)."
+    ]
+  },
+  {
+    "id": 24,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/24",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Son blocks FullUncle from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 17/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 25,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullUncle is the only heir remaining receiving share of 5/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 26,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/24",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son 1",
+        "fraction": "17/48",
+        "percentage": "35.42%"
+      },
+      {
+        "heir": "Son 2",
+        "fraction": "17/48",
+        "percentage": "35.42%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Son blocks FullUncle from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 17/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 27,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/36",
+        "percentage": "47.22%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "17/72",
+        "percentage": "23.61%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/72",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/36",
+        "percentage": "47.22%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "17/72",
+        "percentage": "23.61%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Son blocks FullUncle from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 17/36 and Daughter gets the share of 17/72. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 28,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "1/24",
+        "percentage": "4.17%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "1/24",
+        "percentage": "4.17%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullUncle is the only heir remaining receiving share of 1/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 29,
+    "shares_by_category": [],
+    "shares_by_individual": [],
+    "calculation_steps": []
+  },
+  {
+    "id": 30,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "3/4",
+        "percentage": "75%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "3/4",
+        "percentage": "75%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 3/4 (Rule 14)."
+    ]
+  },
+  {
+    "id": 31,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 1/2 and Daughter gets the share of 1/4. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 32,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of FullBrother and FullSister  (Rule 44).",
+      "FullBrother and FullSister share in the ratio of 2:1 (Rule 15)",
+      "FullBrother gets the share of 1/3 and FullSister gets the share of 1/6. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 33,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b)."
+    ]
+  },
+  {
+    "id": 34,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "1/6",
+        "percentage": "16.66%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "1/6",
+        "percentage": "16.66%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33)."
+    ]
+  },
+  {
+    "id": 35,
+    "shares_by_category": [
+      {
+        "heir": "Son",
+        "fraction": "1/1",
+        "percentage": "100%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Son 1",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Son 2",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Son 3",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 1/1 (Rule 14)."
+    ]
+  },
+  {
+    "id": 36,
+    "shares_by_category": [
+      {
+        "heir": "Son",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Son",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 1/2 and Daughter gets the share of 1/2. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 37,
+    "shares_by_category": [
+      {
+        "heir": "FullBrother",
+        "fraction": "4/5",
+        "percentage": "80%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/5",
+        "percentage": "20%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "FullBrother 1",
+        "fraction": "2/5",
+        "percentage": "40%"
+      },
+      {
+        "heir": "FullBrother 2",
+        "fraction": "2/5",
+        "percentage": "40%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/5",
+        "percentage": "20%"
+      }
+    ],
+    "calculation_steps": [
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of FullBrother and FullSister  (Rule 44).",
+      "FullBrother and FullSister share in the ratio of 2:1 (Rule 15)",
+      "FullBrother gets the share of 4/5 and FullSister gets the share of 1/5. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 38,
+    "shares_by_category": [
+      {
+        "heir": "Father",
+        "fraction": "5/6",
+        "percentage": "83.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "0/6",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Father",
+        "fraction": "5/6",
+        "percentage": "83.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Father blocks FullSister from receiving any share. (Rule 13)",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 5/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 39,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a)."
+    ]
+  },
+  {
+    "id": 40,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullUncle is the only heir remaining receiving share of 5/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 41,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 1/4 (Rule 14)."
+    ]
+  },
+  {
+    "id": 42,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullCousin",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullCousin",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 4a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullCousin is the only heir remaining receiving share of 1/4 (Rule 14)."
+    ]
+  },
+  {
+    "id": 43,
+    "shares_by_category": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/6",
+        "percentage": "83.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother 1",
+        "fraction": "5/12",
+        "percentage": "41.66%"
+      },
+      {
+        "heir": "FullBrother 2",
+        "fraction": "5/12",
+        "percentage": "41.66%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 5/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 44,
+    "shares_by_category": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Maternal Brother gets the prescribed share of 1/6 (Rule 12a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalBrother is the only heir remaining receiving share of 2/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 45,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullNephew",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife 1",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Wife 2",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullNephew",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullNephew is the only heir remaining receiving share of 5/12 (Rule 14)."
+    ]
+  },
+  {
+    "id": 46,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "PaternalCousinsGrandSon",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "PaternalCousinsGrandSon",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalCousinsGrandSon is the only heir remaining receiving share of 5/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 47,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "GrandSon is the only heir remaining receiving share of 1/2 (Rule 14)."
+    ]
+  },
+  {
+    "id": 48,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalCousinsGrandSon",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalCousinsGrandSon",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalCousinsGrandSon is the only heir remaining receiving share of 1/2 (Rule 14)."
+    ]
+  },
+  {
+    "id": 49,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Paternal Grandmother gets the prescribed share of 1/6 (Rule 8a).",
+      "Maternal Brother gets the prescribed share of 1/6 (Rule 12a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullUncle is the only heir remaining receiving share of 1/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 50,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "3/4",
+        "percentage": "75%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "3/4",
+        "percentage": "75%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 3/4 (Rule 14)."
+    ]
+  },
+  {
+    "id": 51,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Father gets the prescribed share of 1/6 (Rule 5a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 17/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 52,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 3/8 (Rule 14)."
+    ]
+  },
+  {
+    "id": 53,
+    "shares_by_category": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Maternal Brother gets the prescribed share of 1/6 (Rule 12a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 2/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 54,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalBrother is the only heir remaining receiving share of 1/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 55,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 3/8 (Rule 14)."
+    ]
+  },
+  {
+    "id": 56,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 1/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 57,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 17/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 58,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "13/24",
+        "percentage": "54.17%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "13/24",
+        "percentage": "54.17%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Father gets the prescribed share of 1/6 (Rule 5a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 13/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 59,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 5/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 60,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0/24",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Father blocks FullBrother from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 5/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 61,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/24",
+        "percentage": "4.17%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/24",
+        "percentage": "4.17%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Daughter gets the prescribed share of 1/6 (Rule 4c).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 1/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 62,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/24",
+        "percentage": "4.17%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "Daughter 3",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "1/24",
+        "percentage": "4.17%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Paternal Grandmother gets the prescribed share of 1/6 (Rule 8a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 1/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 63,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "Daughter 3",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 5/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 64,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "PaternalUncle",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "Daughter 3",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "PaternalUncle",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalUncle is the only heir remaining receiving share of 1/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 65,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife 1",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Wife 2",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "FullSister 3",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "PaternalBrother 1",
+        "fraction": "1/36",
+        "percentage": "2.78%"
+      },
+      {
+        "heir": "PaternalBrother 2",
+        "fraction": "1/36",
+        "percentage": "2.78%"
+      },
+      {
+        "heir": "PaternalBrother 3",
+        "fraction": "1/36",
+        "percentage": "2.78%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Full Sister gets the prescribed share of 2/3 (Rule 10b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalBrother is the only heir remaining receiving share of 1/12 (Rule 14)."
+    ]
+  },
+  {
+    "id": 66,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife 1",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Wife 2",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "PaternalGrandMother 1",
+        "fraction": "1/18",
+        "percentage": "5.56%"
+      },
+      {
+        "heir": "PaternalGrandMother 2",
+        "fraction": "1/18",
+        "percentage": "5.56%"
+      },
+      {
+        "heir": "PaternalGrandMother 3",
+        "fraction": "1/18",
+        "percentage": "5.56%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "MaternalBrother 3",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullUncle 1",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "FullUncle 2",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Paternal Grandmother gets the prescribed share of 1/6 (Rule 8a).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullUncle is the only heir remaining receiving share of 3/12 (Rule 14)."
+    ]
+  },
+  {
+    "id": 67,
+    "shares_by_category": [
+      {
+        "heir": "Son",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Son",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 2/3 and Daughter gets the share of 1/3. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 68,
+    "shares_by_category": [
+      {
+        "heir": "FullBrother",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "FullBrother",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of FullBrother and FullSister  (Rule 44).",
+      "FullBrother and FullSister share in the ratio of 2:1 (Rule 15)",
+      "FullBrother gets the share of 2/3 and FullSister gets the share of 1/3. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 69,
+    "shares_by_category": [
+      {
+        "heir": "Son",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Son",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "5/24",
+        "percentage": "20.84%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "5/24",
+        "percentage": "20.84%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Father gets the prescribed share of 1/6 (Rule 5a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 5/12 and Daughter gets the share of 5/12. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 70,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of PaternalBrother and PaternalSister  (Rule 44).",
+      "PaternalBrother and PaternalSister share in the ratio of 2:1 (Rule 15)",
+      "PaternalBrother gets the share of 1/2 and PaternalSister gets the share of 1/4. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 71,
+    "shares_by_category": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "5/24",
+        "percentage": "20.84%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "5/24",
+        "percentage": "20.84%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of FullBrother and FullSister  (Rule 44).",
+      "FullBrother and FullSister share in the ratio of 2:1 (Rule 15)",
+      "FullBrother gets the share of 5/12 and FullSister gets the share of 5/12. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 72,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of GrandSon and GrandDaughter  (Rule 44).",
+      "GrandSon and GrandDaughter share in the ratio of 2:1 (Rule 15)",
+      "GrandSon gets the share of 2/9 and GrandDaughter gets the share of 1/9. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 73,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "GrandDaughter 1",
+        "fraction": "3/16",
+        "percentage": "18.75%"
+      },
+      {
+        "heir": "GrandDaughter 2",
+        "fraction": "3/16",
+        "percentage": "18.75%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of GrandSon and GrandDaughter  (Rule 44).",
+      "GrandSon and GrandDaughter share in the ratio of 2:1 (Rule 15)",
+      "GrandSon gets the share of 3/8 and GrandDaughter gets the share of 3/8. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 74,
+    "shares_by_category": [
+      {
+        "heir": "FullUncle",
+        "fraction": "1/1",
+        "percentage": "100%"
+      }
+    ],
+    "shares_by_individual": [],
+    "calculation_steps": [
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullUncle is the only heir remaining receiving share of 1/1 (Rule 14)."
+    ]
+  },
+  {
+    "id": 75,
+    "shares_by_category": [
+      {
+        "heir": "PaternalCousinsGrandSon",
+        "fraction": "1/1",
+        "percentage": "100%"
+      }
+    ],
+    "shares_by_individual": [],
+    "calculation_steps": [
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalCousinsGrandSon is the only heir remaining receiving share of 1/1 (Rule 14)."
+    ]
+  },
+  {
+    "id": 76,
+    "shares_by_category": [
+      {
+        "heir": "Son",
+        "fraction": "6/7",
+        "percentage": "85.71%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/7",
+        "percentage": "14.29%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Son 1",
+        "fraction": "2/7",
+        "percentage": "28.57%"
+      },
+      {
+        "heir": "Son 2",
+        "fraction": "2/7",
+        "percentage": "28.57%"
+      },
+      {
+        "heir": "Son 3",
+        "fraction": "2/7",
+        "percentage": "28.57%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/7",
+        "percentage": "14.29%"
+      }
+    ],
+    "calculation_steps": [
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 6/7 and Daughter gets the share of 1/7. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 77,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "3/4",
+        "percentage": "75%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son 1",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son 2",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son 3",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 3/4 and Daughter gets the share of 1/8. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 78,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "7/12",
+        "percentage": "58.33%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "7/24",
+        "percentage": "29.17%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "7/12",
+        "percentage": "58.33%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "7/24",
+        "percentage": "29.17%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 7/12 and Daughter gets the share of 7/24. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 79,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 1/2 and Daughter gets the share of 1/4. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 80,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of PaternalBrother and PaternalSister  (Rule 44).",
+      "PaternalBrother and PaternalSister share in the ratio of 2:1 (Rule 15)",
+      "PaternalBrother gets the share of 1/3 and PaternalSister gets the share of 1/6. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 81,
+    "shares_by_category": [
+      {
+        "heir": "Son",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Son",
+        "fraction": "5/12",
+        "percentage": "41.67%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "5/24",
+        "percentage": "20.84%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "5/24",
+        "percentage": "20.84%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 5/12 and Daughter gets the share of 5/12. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 82,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/48",
+        "percentage": "35.42%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "17/48",
+        "percentage": "35.42%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/48",
+        "percentage": "35.42%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "17/96",
+        "percentage": "17.71%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "17/96",
+        "percentage": "17.71%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 17/48 and Daughter gets the share of 17/48. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 83,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "GrandSon 1",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      },
+      {
+        "heir": "GrandSon 2",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      },
+      {
+        "heir": "GrandSon 3",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      },
+      {
+        "heir": "GrandDaughter 1",
+        "fraction": "1/24",
+        "percentage": "4.16%"
+      },
+      {
+        "heir": "GrandDaughter 2",
+        "fraction": "1/24",
+        "percentage": "4.16%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of GrandSon and GrandDaughter  (Rule 44).",
+      "GrandSon and GrandDaughter share in the ratio of 2:1 (Rule 15)",
+      "GrandSon gets the share of 1/4 and GrandDaughter gets the share of 1/12. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 84,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0/2",
+        "percentage": "0%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "0/2",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a)."
+    ]
+  },
+  {
+    "id": 85,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/36",
+        "percentage": "47.22%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "17/72",
+        "percentage": "23.61%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife 1",
+        "fraction": "1/16",
+        "percentage": "6.25%"
+      },
+      {
+        "heir": "Wife 2",
+        "fraction": "1/16",
+        "percentage": "6.25%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/36",
+        "percentage": "47.22%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "17/72",
+        "percentage": "23.61%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 17/36 and Daughter gets the share of 17/72. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 86,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "13/36",
+        "percentage": "36.11%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "13/72",
+        "percentage": "18.06%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "GrandSon",
+        "fraction": "13/36",
+        "percentage": "36.11%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "13/72",
+        "percentage": "18.06%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Father gets the prescribed share of 1/6 (Rule 5a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of GrandSon and GrandDaughter  (Rule 44).",
+      "GrandSon and GrandDaughter share in the ratio of 2:1 (Rule 15)",
+      "GrandSon gets the share of 13/36 and GrandDaughter gets the share of 13/72. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 87,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 1/12 (Rule 14)."
+    ]
+  },
+  {
+    "id": 88,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "5/24",
+        "percentage": "20.83%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 5/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 89,
+    "shares_by_category": [
+      {
+        "heir": "GrandDaughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "GrandDaughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "GrandDaughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister 3",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 4b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 1/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 90,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "1/6",
+        "percentage": "16.66%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "1/6",
+        "percentage": "16.66%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Daughter gets the prescribed share of 1/6 (Rule 4c).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 1/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 91,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "Daughter 3",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister 3",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 1/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 92,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalSister 1",
+        "fraction": "1/12",
+        "percentage": "8.34%"
+      },
+      {
+        "heir": "PaternalSister 2",
+        "fraction": "1/12",
+        "percentage": "8.34%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Daughter gets the prescribed share of 1/6 (Rule 4c).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalSister is the only heir remaining receiving share of 1/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 93,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "9/14",
+        "percentage": "64.29%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/28",
+        "percentage": "10.71%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife 1",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Wife 2",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "FullBrother 1",
+        "fraction": "3/14",
+        "percentage": "21.43%"
+      },
+      {
+        "heir": "FullBrother 2",
+        "fraction": "3/14",
+        "percentage": "21.43%"
+      },
+      {
+        "heir": "FullBrother 3",
+        "fraction": "3/14",
+        "percentage": "21.43%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/28",
+        "percentage": "10.71%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of FullBrother and FullSister  (Rule 44).",
+      "FullBrother and FullSister share in the ratio of 2:1 (Rule 15)",
+      "FullBrother gets the share of 9/14 and FullSister gets the share of 3/28. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 94,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/8",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "FullBrother blocks FullUncle from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 3/8 (Rule 14)."
+    ]
+  },
+  {
+    "id": 95,
+    "shares_by_category": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "0/6",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/6",
+        "percentage": "83.33%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0/6",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "5/6",
+        "percentage": "83.33%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother blocks PaternalGrandMother from receiving any share. (Rule 13)",
+      "FullBrother blocks PaternalBrother from receiving any share. (Rule 13)",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 5/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 96,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "3/5",
+        "percentage": "60%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/20",
+        "percentage": "15%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/20",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullBrother 1",
+        "fraction": "3/10",
+        "percentage": "30%"
+      },
+      {
+        "heir": "FullBrother 2",
+        "fraction": "3/10",
+        "percentage": "30%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/20",
+        "percentage": "15%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "FullBrother blocks FullUncle from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of FullBrother and FullSister  (Rule 44).",
+      "FullBrother and FullSister share in the ratio of 2:1 (Rule 15)",
+      "FullBrother gets the share of 3/5 and FullSister gets the share of 3/20. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 97,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "0/24",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0/24",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife 1",
+        "fraction": "1/16",
+        "percentage": "6.25%"
+      },
+      {
+        "heir": "Wife 2",
+        "fraction": "1/16",
+        "percentage": "6.25%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Father blocks GrandFather from receiving any share. (Rule 13)",
+      "Father blocks FullBrother from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 3/8 (Rule 14)."
+    ]
+  },
+  {
+    "id": 98,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/18",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "FullBrother blocks FullUncle from receiving any share. (Rule 13)",
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of FullBrother and FullSister  (Rule 44).",
+      "FullBrother and FullSister share in the ratio of 2:1 (Rule 15)",
+      "FullBrother gets the share of 2/9 and FullSister gets the share of 1/9. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 99,
+    "shares_by_category": [
+      {
+        "heir": "Son",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0/6",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Son",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Son blocks FullBrother from receiving any share. (Rule 13)",
+      "Father gets the prescribed share of 1/6 (Rule 5a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 2/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 100,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalNephew",
+        "fraction": "0/24",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "17/24",
+        "percentage": "70.83%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalNephew",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Son blocks PaternalNephew from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Father gets the prescribed share of 1/6 (Rule 5a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Son is the only heir remaining receiving share of 17/24 (Rule 14)."
+    ]
+  },
+  {
+    "id": 101,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/7",
+        "percentage": "14.29%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/7",
+        "percentage": "14.29%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Paternal Sister gets the prescribed share of 1/6 (Rule 11c).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 102,
+    "shares_by_category": [
+      {
+        "heir": "FullBrother",
+        "fraction": "1/1",
+        "percentage": "100%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0/1",
+        "percentage": "0%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "0/1",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "FullBrother blocks PaternalBrother from receiving any share. (Rule 13)",
+      "FullBrother blocks PaternalSister from receiving any share. (Rule 13)",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullBrother is the only heir remaining receiving share of 1/1 (Rule 14)."
+    ]
+  },
+  {
+    "id": 103,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0/2",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "FullSister blocks PaternalBrother from receiving any share. (Rule 13)",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 1/2 (Rule 14)."
+    ]
+  },
+  {
+    "id": 104,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullNephew",
+        "fraction": "0/3",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.34%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister 3",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullNephew",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "FullSister blocks FullNephew from receiving any share. (Rule 13)",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "FullSister is the only heir remaining receiving share of 1/3 (Rule 14)."
+    ]
+  },
+  {
+    "id": 105,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/6",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalSister 1",
+        "fraction": "1/12",
+        "percentage": "8.34%"
+      },
+      {
+        "heir": "PaternalSister 2",
+        "fraction": "1/12",
+        "percentage": "8.34%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "PaternalSister blocks FullUncle from receiving any share. (Rule 13)",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Daughter gets the prescribed share of 1/6 (Rule 4c).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalSister is the only heir remaining receiving share of 1/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 106,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "0/12",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0/12",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Son 1",
+        "fraction": "1/6",
+        "percentage": "16.66%"
+      },
+      {
+        "heir": "Son 2",
+        "fraction": "1/6",
+        "percentage": "16.66%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "1/12",
+        "percentage": "8.33%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Son blocks FullBrother from receiving any share. (Rule 13)",
+      "Father blocks GrandFather from receiving any share. (Rule 13)",
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Father gets the prescribed share of 1/6 (Rule 5a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Joint Ta'seeb of Son and Daughter  (Rule 44).",
+      "Son and Daughter share in the ratio of 2:1 (Rule 15)",
+      "Son gets the share of 1/3 and Daughter gets the share of 1/12. (Rule 15, 44)"
+    ]
+  },
+  {
+    "id": 107,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/7",
+        "percentage": "14.29%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/7",
+        "percentage": "14.29%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Paternal Grandmother gets the prescribed share of 1/6 (Rule 8a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 108,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/8",
+        "percentage": "37.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 109,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "4/9",
+        "percentage": "44.44%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "PaternalSister 1",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "PaternalSister 2",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Paternal Sister gets the prescribed share of 2/3 (Rule 11b).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 110,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "MaternalSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "MaternalSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Paternal Sister gets the prescribed share of 1/6 (Rule 11c).",
+      "Maternal Sister gets the prescribed share of 1/6 (Rule 12a).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 111,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "3/10",
+        "percentage": "30%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/10",
+        "percentage": "10%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/10",
+        "percentage": "30%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/10",
+        "percentage": "10%"
+      },
+      {
+        "heir": "MaternalSister",
+        "fraction": "1/5",
+        "percentage": "20%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "3/10",
+        "percentage": "30%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/10",
+        "percentage": "10%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/10",
+        "percentage": "30%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/10",
+        "percentage": "10%"
+      },
+      {
+        "heir": "MaternalSister 1",
+        "fraction": "1/10",
+        "percentage": "10%"
+      },
+      {
+        "heir": "MaternalSister 2",
+        "fraction": "1/10",
+        "percentage": "10%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Paternal Sister gets the prescribed share of 1/6 (Rule 11c).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 112,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "3/13",
+        "percentage": "23.08%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "8/13",
+        "percentage": "61.54%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/13",
+        "percentage": "15.38%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "3/13",
+        "percentage": "23.08%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "4/13",
+        "percentage": "30.77%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "4/13",
+        "percentage": "30.77%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/13",
+        "percentage": "15.38%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 113,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "3/13",
+        "percentage": "23.08%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/13",
+        "percentage": "15.38%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "8/13",
+        "percentage": "61.54%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "3/13",
+        "percentage": "23.08%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/13",
+        "percentage": "15.38%"
+      },
+      {
+        "heir": "PaternalSister 1",
+        "fraction": "4/13",
+        "percentage": "30.77%"
+      },
+      {
+        "heir": "PaternalSister 2",
+        "fraction": "4/13",
+        "percentage": "30.77%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Paternal Sister gets the prescribed share of 2/3 (Rule 11b).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 114,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/5",
+        "percentage": "20%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "8/15",
+        "percentage": "53.33%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "4/15",
+        "percentage": "26.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/5",
+        "percentage": "20%"
+      },
+      {
+        "heir": "FullSister 1",
+        "fraction": "4/15",
+        "percentage": "26.66%"
+      },
+      {
+        "heir": "FullSister 2",
+        "fraction": "4/15",
+        "percentage": "26.66%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "2/15",
+        "percentage": "13.34%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "2/15",
+        "percentage": "13.34%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Full Sister gets the prescribed share of 2/3 (Rule 10b).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 115,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/5",
+        "percentage": "20%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "8/15",
+        "percentage": "53.33%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "2/15",
+        "percentage": "13.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/15",
+        "percentage": "13.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/5",
+        "percentage": "20%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "4/15",
+        "percentage": "26.66%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "4/15",
+        "percentage": "26.66%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "2/15",
+        "percentage": "13.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/15",
+        "percentage": "13.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 116,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "3/17",
+        "percentage": "17.65%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/17",
+        "percentage": "11.76%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "8/17",
+        "percentage": "47.06%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "4/17",
+        "percentage": "23.53%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "3/17",
+        "percentage": "17.65%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/17",
+        "percentage": "11.76%"
+      },
+      {
+        "heir": "PaternalSister 1",
+        "fraction": "4/17",
+        "percentage": "23.53%"
+      },
+      {
+        "heir": "PaternalSister 2",
+        "fraction": "4/17",
+        "percentage": "23.53%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "2/17",
+        "percentage": "11.76%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "2/17",
+        "percentage": "11.76%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Paternal Sister gets the prescribed share of 2/3 (Rule 11b).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 117,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "16/27",
+        "percentage": "59.26%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "8/27",
+        "percentage": "29.63%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "8/27",
+        "percentage": "29.63%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 118,
+    "shares_by_category": [
+      {
+        "heir": "Daughter",
+        "fraction": "1/1",
+        "percentage": "100%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Daughter 1",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Daughter 3",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "calculation_steps": [
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 119,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 120,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "MaternalSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "MaternalSister 1",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "MaternalSister 2",
+        "fraction": "1/4",
+        "percentage": "25%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Paternal Grandmother gets the prescribed share of 1/6 (Rule 8a).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 121,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "7/10",
+        "percentage": "70%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "7/40",
+        "percentage": "17.5%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/8",
+        "percentage": "12.5%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "7/20",
+        "percentage": "35%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "7/20",
+        "percentage": "35%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "7/40",
+        "percentage": "17.5%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Total shares are still remaining to be distributed. Shares should now be increased proportionally among all heirs except the spouse (Rule 19)."
+    ]
+  },
+  {
+    "id": 122,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "MaternalSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "MaternalSister",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Paternal Sister gets the prescribed share of 1/6 (Rule 11c).",
+      "Maternal Sister gets the prescribed share of 1/6 (Rule 12a).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 123,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0/12",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "FullUncle",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Father blocks FullUncle from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 5/12 (Rule 14).",
+      "Umar's case detected. Special rules need to be applied for parent's share calculation (Rule 21).",
+      "Father gets the share of 1/2 and Mother gets the share of 1/4 (Rule 21)"
+    ]
+  },
+  {
+    "id": 124,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalCousin",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalGrandMother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalCousin",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Paternal Grandmother gets the prescribed share of 1/6 (Rule 8a).",
+      "Maternal Brother gets the prescribed share of 1/6 (Rule 12a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "PaternalCousin is the only heir remaining receiving share of 1/6 (Rule 14)."
+    ]
+  },
+  {
+    "id": 125,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "7/12",
+        "percentage": "58.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "0/12",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/4",
+        "percentage": "25%"
+      },
+      {
+        "heir": "Father",
+        "fraction": "7/12",
+        "percentage": "58.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Father blocks MaternalBrother from receiving any share. (Rule 13)",
+      "Wife gets the prescribed share of 1/4 (Rule 2a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Father is the only heir remaining receiving share of 7/12 (Rule 14)."
+    ]
+  },
+  {
+    "id": 126,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Grandfather gets the prescribed share of 1/6 (Rule 7a)."
+    ]
+  },
+  {
+    "id": 127,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0/6",
+        "percentage": "0%"
+      },
+      {
+        "heir": "MaternalBrother",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "PaternalBrother 1",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "PaternalBrother 2",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "MaternalBrother 1",
+        "fraction": "1/3",
+        "percentage": "16.66%"
+      },
+      {
+        "heir": "MaternalBrother 2",
+        "fraction": "1/3",
+        "percentage": "16.66%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Maternal Siblings gets the prescribed share of 1/3 (Rule 12b).",
+      "Maternal Brothers gets 1/6 & Maternal Sisters gets 1/6 - the ratio 1:1 (Rule 33)."
+    ]
+  },
+  {
+    "id": 128,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/7",
+        "percentage": "14.29%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "3/7",
+        "percentage": "42.86%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/7",
+        "percentage": "14.29%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Paternal Sister gets the prescribed share of 1/6 (Rule 11c).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 129,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0/2",
+        "percentage": "0%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "0/2",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a)."
+    ]
+  },
+  {
+    "id": 130,
+    "shares_by_category": [
+      {
+        "heir": "GrandFather",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "2/3",
+        "percentage": "66.67%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "GrandFather",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "FullBrother 1",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "FullBrother 2",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "FullBrother 3",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      }
+    ],
+    "calculation_steps": [
+      "Grandfather gets the prescribed share of 1/6 (Rule 7a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Grandfather & siblings case need to be handled as a special case (Rule 23).",
+      "Grandfather is given 1/3 of the residual share. He gets the total share of 1/3 (Rule 23d).",
+      "Full Brothers gets the remaining residual share of 2/3  (Rule 23c)."
+    ]
+  },
+  {
+    "id": 131,
+    "shares_by_category": [
+      {
+        "heir": "Wife",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "16/27",
+        "percentage": "59.26%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0/216",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Wife",
+        "fraction": "1/9",
+        "percentage": "11.11%"
+      },
+      {
+        "heir": "Daughter 1",
+        "fraction": "8/27",
+        "percentage": "29.63%"
+      },
+      {
+        "heir": "Daughter 2",
+        "fraction": "8/27",
+        "percentage": "29.63%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Wife gets the prescribed share of 1/8 (Rule 2b).",
+      "Daughter gets the prescribed share of 2/3 (Rule 3b).",
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Grandfather gets the prescribed share of 1/6 (Rule 7a).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 132,
+    "shares_by_category": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "5/18",
+        "percentage": "27.78%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/27",
+        "percentage": "3.7%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/54",
+        "percentage": "1.85%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Mother",
+        "fraction": "1/6",
+        "percentage": "16.67%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "5/18",
+        "percentage": "27.78%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "1/2",
+        "percentage": "50%"
+      },
+      {
+        "heir": "PaternalBrother",
+        "fraction": "1/27",
+        "percentage": "3.7%"
+      },
+      {
+        "heir": "PaternalSister",
+        "fraction": "1/54",
+        "percentage": "1.85%"
+      }
+    ],
+    "calculation_steps": [
+      "Mother gets the prescribed share of 1/6 (Rule 6b).",
+      "Grandfather gets the prescribed share of 1/6 (Rule 7a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Distribute the remaining shares according to relative priority (Rule 14)",
+      "Grandfather & siblings case need to be handled as a special case (Rule 23).",
+      "Grandfather is given 1/3 of the residual share. He gets the total share of 5/18 (Rule 23d).",
+      "Paternal Brothers & sisters share the residual share in the ratio of 2:1  (Rule 15).",
+      "Paternal Brothers gets the share of 1/27 and Patenal Sisters gets the share of 1/54. (Rule 15, 23d, 44)"
+    ]
+  },
+  {
+    "id": 133,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "3/13",
+        "percentage": "23.08%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "6/13",
+        "percentage": "46.15%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "2/13",
+        "percentage": "15.38%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "2/13",
+        "percentage": "15.38%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0/156",
+        "percentage": "0%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "3/13",
+        "percentage": "23.08%"
+      },
+      {
+        "heir": "Daughter",
+        "fraction": "6/13",
+        "percentage": "46.15%"
+      },
+      {
+        "heir": "GrandDaughter",
+        "fraction": "2/13",
+        "percentage": "15.38%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "2/13",
+        "percentage": "15.38%"
+      },
+      {
+        "heir": "FullBrother",
+        "fraction": "0",
+        "percentage": "0%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/4 (Rule 1b).",
+      "Daughter gets the prescribed share of 1/2 (Rule 3a).",
+      "Daughter gets the prescribed share of 1/6 (Rule 4c).",
+      "Grandfather gets the prescribed share of 1/6 (Rule 7a).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18)."
+    ]
+  },
+  {
+    "id": 134,
+    "shares_by_category": [
+      {
+        "heir": "Husband",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "8/27",
+        "percentage": "29.63%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      }
+    ],
+    "shares_by_individual": [
+      {
+        "heir": "Husband",
+        "fraction": "1/3",
+        "percentage": "33.33%"
+      },
+      {
+        "heir": "Mother",
+        "fraction": "2/9",
+        "percentage": "22.22%"
+      },
+      {
+        "heir": "GrandFather",
+        "fraction": "8/27",
+        "percentage": "29.63%"
+      },
+      {
+        "heir": "FullSister",
+        "fraction": "4/27",
+        "percentage": "14.81%"
+      }
+    ],
+    "calculation_steps": [
+      "Husband gets the prescribed share of 1/2 (Rule 1a).",
+      "Mother gets the prescribed share of 1/3 (Rule 6a).",
+      "Grandfather gets the prescribed share of 1/6 (Rule 7a).",
+      "Full Sister gets the prescribed share of 1/2 (Rule 10a).",
+      "Total shares have exceeded 100%. Shares need to be reduced proportionally (Rule 18).",
+      "Sisters share is more than Grandfather. Need to recalculate as it is in Awaal case (Rule 18a).",
+      "Grandfather & Sisters share the remaining shares in the ratio 2:1 (Rule 18a).",
+      "Grandfather's share is now 8/27",
+      "Full Sister's share is now 4/27",
+      "Paternal Sister's share is now 0/54"
+    ]
+  }
+]
