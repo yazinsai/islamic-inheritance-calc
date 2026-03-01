@@ -2,6 +2,7 @@ import Fraction from "fraction.js";
 import {
   HeirInput,
   HeirType,
+  ExplanationTemplate,
   hasHeir,
   heirCount,
   hasOffspring,
@@ -29,7 +30,7 @@ const ONE_HALF = new Fraction(1, 2);
  */
 export function applyUmariyyah(
   input: HeirInput,
-  shares: Map<HeirType, { share: Fraction; explanation: string }>,
+  shares: Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>,
 ): boolean {
   if (hasOffspring(input)) return false;
   if (!hasHeir(input, "father")) return false;
@@ -40,48 +41,31 @@ export function applyUmariyyah(
   const hasWife = hasHeir(input, "wife");
   if (!hasHusband && !hasWife) return false;
 
-  // Umariyyah only applies when the effective heirs are father + mother + spouse.
-  // Father blocks grandfather, grandmothers (paternal), siblings, nephews, uncles, cousins.
-  // So we only check for heirs that father does NOT block:
-  // - Any offspring (already checked above)
-  // - Grandfather is blocked by father
-  // - Grandmothers: paternal is blocked by father, maternal is blocked by mother
-  // - Siblings: blocked by father
-  // - Extended family: blocked by father
-  // The only remaining check is if there are single siblings that don't qualify
-  // as "multiple" but exist (mother's share wouldn't change for single sibling)
-  // Actually, Rule 21c says multiple siblings invalidate Umariyyah (already checked).
-  // Single siblings are blocked by father anyway.
-
   if (hasHusband) {
     shares.set("husband", {
       share: ONE_HALF,
-      explanation: "Husband gets 1/2 (no offspring) (Rule 1a).",
+      explanation: { key: "explain.umariyyah.husbandHalf" },
     });
     shares.set("mother", {
       share: ONE_SIXTH,
-      explanation:
-        "Mother gets 1/3 of the remainder after husband's share = 1/3 × 1/2 = 1/6 (Umariyyah case, Rule 21).",
+      explanation: { key: "explain.umariyyah.motherAfterHusband" },
     });
     shares.set("father", {
       share: ONE_THIRD,
-      explanation:
-        "Father gets the remainder after husband and mother = 1/3 (Umariyyah case, Rule 21).",
+      explanation: { key: "explain.umariyyah.fatherAfterHusband" },
     });
   } else {
     shares.set("wife", {
       share: ONE_FOURTH,
-      explanation: "Wife gets 1/4 (no offspring) (Rule 2a).",
+      explanation: { key: "explain.umariyyah.wifeQuarter" },
     });
     shares.set("mother", {
       share: ONE_FOURTH,
-      explanation:
-        "Mother gets 1/3 of the remainder after wife's share = 1/3 × 3/4 = 1/4 (Umariyyah case, Rule 21).",
+      explanation: { key: "explain.umariyyah.motherAfterWife" },
     });
     shares.set("father", {
       share: ONE_HALF,
-      explanation:
-        "Father gets the remainder after wife and mother = 1/2 (Umariyyah case, Rule 21).",
+      explanation: { key: "explain.umariyyah.fatherAfterWife" },
     });
   }
 
@@ -108,7 +92,7 @@ export function applyUmariyyah(
     if (hasHeir(input, heir)) {
       shares.set(heir, {
         share: ZERO,
-        explanation: `${heir} is blocked by the presence of the father (Rule 13c).`,
+        explanation: { key: "explain.blockedByFather", vars: { heir } },
       });
     }
   }
@@ -117,7 +101,7 @@ export function applyUmariyyah(
   if (hasHeir(input, "maternal_grandmother")) {
     shares.set("maternal_grandmother", {
       share: ZERO,
-      explanation: "Maternal grandmother is blocked by the presence of the mother.",
+      explanation: { key: "explain.maternalGrandmother.blockedByMotherSpecial" },
     });
   }
 
@@ -129,7 +113,7 @@ export function applyUmariyyah(
  */
 export function applyMushtaraka(
   input: HeirInput,
-  shares: Map<HeirType, { share: Fraction; explanation: string }>,
+  shares: Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>,
 ): boolean {
   if (!hasHeir(input, "full_brother")) return false;
 
@@ -158,21 +142,21 @@ export function applyMushtaraka(
 
   shares.set("full_brother", {
     share: fullBrotherPortion,
-    explanation: `Full brother(s) share equally with maternal siblings in their ${maternalShare.toFraction()} portion (Mushtaraka case, Rule 22).`,
+    explanation: { key: "explain.mushtaraka.fullBrothers", vars: { fraction: maternalShare.toFraction() } },
   });
 
   if (maternalBrotherShare) {
     const mbCount = heirCount(input, "maternal_brother");
     shares.set("maternal_brother", {
       share: maternalPortion.mul(mbCount).div(totalMaternal),
-      explanation: `Maternal brother(s) share their portion equally with full brothers (Mushtaraka case, Rule 22).`,
+      explanation: { key: "explain.mushtaraka.maternalBrothers" },
     });
   }
   if (maternalSisterShare) {
     const msCount = heirCount(input, "maternal_sister");
     shares.set("maternal_sister", {
       share: maternalPortion.mul(msCount).div(totalMaternal),
-      explanation: `Maternal sister(s) share their portion equally with full brothers (Mushtaraka case, Rule 22).`,
+      explanation: { key: "explain.mushtaraka.maternalSisters" },
     });
   }
 
@@ -183,7 +167,7 @@ export function applyMushtaraka(
  * Apply Awl (proportional reduction) when total shares exceed 1 (Rule 18).
  */
 export function applyAwl(
-  shares: Map<HeirType, { share: Fraction; explanation: string }>,
+  shares: Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>,
 ): boolean {
   let total = new Fraction(0);
   for (const [, { share }] of shares) {
@@ -197,9 +181,11 @@ export function applyAwl(
       const newShare = data.share.div(total);
       shares.set(heir, {
         share: newShare,
-        explanation:
-          data.explanation +
-          ` Reduced proportionally from ${data.share.toFraction()} to ${newShare.toFraction()} due to Awl (Rule 18).`,
+        explanation: {
+          key: "explain.awl.reduced",
+          vars: { from: data.share.toFraction(), to: newShare.toFraction() },
+          prefix: data.explanation,
+        },
       });
     }
   }
@@ -216,7 +202,7 @@ export function applyAwl(
  */
 export function applyAkdariyyah(
   input: HeirInput,
-  shares: Map<HeirType, { share: Fraction; explanation: string }>,
+  shares: Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>,
 ): boolean {
   if (!hasHeir(input, "grandfather")) return false;
   if (hasHeir(input, "father")) return false;
@@ -257,7 +243,7 @@ export function applyAkdariyyah(
   const newGfShare = partValue.mul(2);
   shares.set("grandfather", {
     share: newGfShare,
-    explanation: `Grandfather's share adjusted to ${newGfShare.toFraction()} via 2:1 redistribution with sisters (Akdariyyah case, Rule 18a).`,
+    explanation: { key: "explain.akdariyyah.grandfather", vars: { fraction: newGfShare.toFraction() } },
   });
 
   for (const s of sisterShares) {
@@ -265,7 +251,7 @@ export function applyAkdariyyah(
     const newSisterShare = partValue.mul(count);
     shares.set(s.heir, {
       share: newSisterShare,
-      explanation: `Sister share adjusted to ${newSisterShare.toFraction()} via 2:1 redistribution with grandfather (Akdariyyah case, Rule 18a).`,
+      explanation: { key: "explain.akdariyyah.sister", vars: { fraction: newSisterShare.toFraction() } },
     });
   }
 
@@ -277,7 +263,7 @@ export function applyAkdariyyah(
  */
 export function applyRadd(
   input: HeirInput,
-  shares: Map<HeirType, { share: Fraction; explanation: string }>,
+  shares: Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>,
 ): boolean {
   let total = new Fraction(0);
   for (const [, { share }] of shares) {
@@ -304,9 +290,10 @@ export function applyRadd(
       if (data.share.compare(ZERO) > 0) {
         shares.set(heir, {
           share: ONE,
-          explanation:
-            data.explanation +
-            ` Increased to full estate as the only heir (Radd).`,
+          explanation: {
+            key: "explain.radd.soleHeir",
+            prefix: data.explanation,
+          },
         });
       }
     }
@@ -321,9 +308,11 @@ export function applyRadd(
 
     shares.set(heir, {
       share: newShare,
-      explanation:
-        existingData.explanation +
-        ` Increased from ${originalShare.toFraction()} to ${newShare.toFraction()} via Radd (Rule 19).`,
+      explanation: {
+        key: "explain.radd.increased",
+        vars: { from: originalShare.toFraction(), to: newShare.toFraction() },
+        prefix: existingData.explanation,
+      },
     });
   }
 
@@ -346,7 +335,7 @@ export function applyRadd(
  */
 export function applyGrandfatherSiblings(
   input: HeirInput,
-  shares: Map<HeirType, { share: Fraction; explanation: string }>,
+  shares: Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>,
 ): boolean {
   if (hasHeir(input, "father")) return false;
   if (hasOffspring(input)) return false;
@@ -463,15 +452,15 @@ export function applyGrandfatherSiblings(
 
   // Pick the maximum
   let grandfatherShare = optionA;
-  let method = "A (1/6 of estate)";
+  let methodKey = "method.a";
 
   if (optionB.compare(grandfatherShare) > 0) {
     grandfatherShare = optionB;
-    method = "B (1/3 of remainder)";
+    methodKey = "method.b";
   }
   if (optionC.compare(grandfatherShare) > 0) {
     grandfatherShare = optionC;
-    method = "C (treated as brother)";
+    methodKey = "method.c";
   }
 
   // Check if this causes total to exceed 1 (Rule 23e)
@@ -480,26 +469,35 @@ export function applyGrandfatherSiblings(
     .add(totalPrescribedSisterShare);
   if (totalWithGrandfather.compare(ONE) > 0) {
     grandfatherShare = ONE_SIXTH;
-    method = "A (1/6, fallback because max would exceed total)";
+    methodKey = "method.aFallback";
   }
 
   // Set grandfather's share
   shares.set("grandfather", {
     share: grandfatherShare,
-    explanation: `Grandfather gets ${grandfatherShare.toFraction()} using method ${method} (Grandfather-Siblings special case, Rule 23).`,
+    explanation: {
+      key: "explain.grandfatherSiblings.grandfather",
+      vars: { fraction: grandfatherShare.toFraction(), method: methodKey },
+    },
   });
 
   // Set prescribed sister shares
   if (fullSisterPrescribed.compare(ZERO) > 0) {
     shares.set("full_sister", {
       share: fullSisterPrescribed,
-      explanation: `Full sister gets prescribed share of ${fullSisterPrescribed.toFraction()} (Rule 10).`,
+      explanation: {
+        key: "explain.grandfatherSiblings.fullSisterPrescribed",
+        vars: { fraction: fullSisterPrescribed.toFraction() },
+      },
     });
   }
   if (paternalSisterPrescribed.compare(ZERO) > 0) {
     shares.set("paternal_sister", {
       share: paternalSisterPrescribed,
-      explanation: `Paternal sister gets prescribed share of ${paternalSisterPrescribed.toFraction()} (Rule 11).`,
+      explanation: {
+        key: "explain.grandfatherSiblings.paternalSisterPrescribed",
+        vars: { fraction: paternalSisterPrescribed.toFraction() },
+      },
     });
   }
 
@@ -555,7 +553,10 @@ export function applyGrandfatherSiblings(
         const share = partValue.mul(parts);
         shares.set(heir, {
           share,
-          explanation: `${heir} receives ${share.toFraction()} as residuary in the grandfather-siblings case.`,
+          explanation: {
+            key: "explain.grandfatherSiblings.residuary",
+            vars: { heir, fraction: share.toFraction() },
+          },
         });
       }
     }
@@ -571,7 +572,10 @@ export function applyGrandfatherSiblings(
       if (hasHeir(input, heir) && !shares.has(heir)) {
         shares.set(heir, {
           share: ZERO,
-          explanation: `${heir} gets nothing after grandfather's share.`,
+          explanation: {
+            key: "explain.grandfatherSiblings.nothing",
+            vars: { heir },
+          },
         });
       }
     }

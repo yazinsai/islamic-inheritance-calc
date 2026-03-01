@@ -2,6 +2,7 @@ import Fraction from "fraction.js";
 import {
   HeirInput,
   HeirType,
+  ExplanationTemplate,
   hasHeir,
   heirCount,
   hasOffspring,
@@ -21,7 +22,7 @@ const ONE_TWELFTH = new Fraction(1, 12);
 
 interface FardResult {
   share: Fraction;
-  explanation: string;
+  explanation: ExplanationTemplate;
 }
 
 /**
@@ -39,13 +40,12 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
     if (hasOffspring(input)) {
       result.set("husband", {
         share: ONE_FOURTH,
-        explanation: "Husband gets 1/4 because the deceased has offspring (Rule 1b).",
+        explanation: { key: "explain.husband.withOffspring" },
       });
     } else {
       result.set("husband", {
         share: ONE_HALF,
-        explanation:
-          "Husband gets 1/2 because the deceased has no offspring (Rule 1a).",
+        explanation: { key: "explain.husband.noOffspring" },
       });
     }
   }
@@ -55,14 +55,12 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
     if (hasOffspring(input)) {
       result.set("wife", {
         share: ONE_EIGHTH,
-        explanation:
-          "Wife gets 1/8 because the deceased has offspring (Rule 2b).",
+        explanation: { key: "explain.wife.withOffspring" },
       });
     } else {
       result.set("wife", {
         share: ONE_FOURTH,
-        explanation:
-          "Wife gets 1/4 because the deceased has no offspring (Rule 2a).",
+        explanation: { key: "explain.wife.noOffspring" },
       });
     }
   }
@@ -77,13 +75,12 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       if (count === 1) {
         result.set("daughter", {
           share: ONE_HALF,
-          explanation:
-            "Daughter gets 1/2 as the only daughter with no sons (Rule 3a).",
+          explanation: { key: "explain.daughter.half" },
         });
       } else {
         result.set("daughter", {
           share: TWO_THIRDS,
-          explanation: `Daughters share 2/3 equally (${count} daughters, no sons) (Rule 3b).`,
+          explanation: { key: "explain.daughter.twoThirds", vars: { count } },
         });
       }
     }
@@ -95,7 +92,7 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       // Blocked by son - gets nothing
       result.set("granddaughter", {
         share: ZERO,
-        explanation: "Granddaughter is blocked by the presence of a son.",
+        explanation: { key: "explain.granddaughter.blockedBySon" },
       });
     } else if (hasHeir(input, "grandson")) {
       // Enters asaba with grandson (2:1 ratio) - no fard share
@@ -103,15 +100,13 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       // Blocked by 2+ daughters
       result.set("granddaughter", {
         share: ZERO,
-        explanation:
-          "Granddaughter is blocked because 2 or more daughters already take the 2/3 share.",
+        explanation: { key: "explain.granddaughter.blockedByDaughters" },
       });
     } else if (heirCount(input, "daughter") === 1) {
       // Gets 1/6 to complete 2/3
       result.set("granddaughter", {
         share: ONE_SIXTH,
-        explanation:
-          "Granddaughter gets 1/6 to complete the 2/3 share with the single daughter (Rule 4c).",
+        explanation: { key: "explain.granddaughter.sixth" },
       });
     } else {
       // No daughters, no sons, no grandsons
@@ -119,13 +114,12 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       if (count === 1) {
         result.set("granddaughter", {
           share: ONE_HALF,
-          explanation:
-            "Granddaughter gets 1/2 as the only granddaughter with no sons or daughters (Rule 4a).",
+          explanation: { key: "explain.granddaughter.half" },
         });
       } else {
         result.set("granddaughter", {
           share: TWO_THIRDS,
-          explanation: `Granddaughters share 2/3 equally (${count} granddaughters, no sons or daughters) (Rule 4b).`,
+          explanation: { key: "explain.granddaughter.twoThirds", vars: { count } },
         });
       }
     }
@@ -136,8 +130,7 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
     if (hasOffspring(input)) {
       result.set("father", {
         share: ONE_SIXTH,
-        explanation:
-          "Father gets 1/6 prescribed share because the deceased has offspring (Rule 5a). May also receive residuary.",
+        explanation: { key: "explain.father.withOffspring" },
       });
     }
     // If no offspring, father is purely asaba (no fard) - handled by asaba calculator
@@ -149,14 +142,13 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       result.set("mother", {
         share: ONE_SIXTH,
         explanation: hasOffspring(input)
-          ? "Mother gets 1/6 because the deceased has offspring (Rule 6b)."
-          : "Mother gets 1/6 because the deceased has multiple siblings (Rule 6b).",
+          ? { key: "explain.mother.withOffspring" }
+          : { key: "explain.mother.multipleSiblings" },
       });
     } else {
       result.set("mother", {
         share: ONE_THIRD,
-        explanation:
-          "Mother gets 1/3 because the deceased has no offspring and fewer than 2 siblings (Rule 6a).",
+        explanation: { key: "explain.mother.third" },
       });
     }
   }
@@ -166,13 +158,12 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
     if (hasHeir(input, "father")) {
       result.set("grandfather", {
         share: ZERO,
-        explanation: "Grandfather is blocked by the presence of the father.",
+        explanation: { key: "explain.grandfather.blockedByFather" },
       });
     } else if (hasOffspring(input)) {
       result.set("grandfather", {
         share: ONE_SIXTH,
-        explanation:
-          "Grandfather gets 1/6 because the deceased has offspring and no father (Rule 7a).",
+        explanation: { key: "explain.grandfather.withOffspring" },
       });
     }
     // If no father and no offspring: grandfather is asaba (or special grandfather-siblings case)
@@ -184,27 +175,23 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
     if (hasHeir(input, "father")) {
       result.set("paternal_grandmother", {
         share: ZERO,
-        explanation:
-          "Paternal grandmother is blocked by the presence of the father.",
+        explanation: { key: "explain.paternalGrandmother.blockedByFather" },
       });
     } else if (hasHeir(input, "mother")) {
       result.set("paternal_grandmother", {
         share: ZERO,
-        explanation:
-          "Paternal grandmother is blocked by the presence of the mother.",
+        explanation: { key: "explain.paternalGrandmother.blockedByMother" },
       });
     } else if (hasHeir(input, "maternal_grandmother")) {
       // Both grandmothers share 1/6 (each gets 1/12)
       result.set("paternal_grandmother", {
         share: ONE_TWELFTH,
-        explanation:
-          "Paternal grandmother shares the 1/6 with maternal grandmother (each gets 1/12) (Rule 8b).",
+        explanation: { key: "explain.paternalGrandmother.shared" },
       });
     } else {
       result.set("paternal_grandmother", {
         share: ONE_SIXTH,
-        explanation:
-          "Paternal grandmother gets 1/6 (no mother, no father, no maternal grandmother) (Rule 8a).",
+        explanation: { key: "explain.paternalGrandmother.sixth" },
       });
     }
   }
@@ -214,8 +201,7 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
     if (hasHeir(input, "mother")) {
       result.set("maternal_grandmother", {
         share: ZERO,
-        explanation:
-          "Maternal grandmother is blocked by the presence of the mother.",
+        explanation: { key: "explain.maternalGrandmother.blockedByMother" },
       });
     } else if (
       hasHeir(input, "paternal_grandmother") &&
@@ -224,14 +210,12 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       // Both grandmothers share 1/6 (each gets 1/12)
       result.set("maternal_grandmother", {
         share: ONE_TWELFTH,
-        explanation:
-          "Maternal grandmother shares the 1/6 with paternal grandmother (each gets 1/12) (Rule 9b).",
+        explanation: { key: "explain.maternalGrandmother.shared" },
       });
     } else {
       result.set("maternal_grandmother", {
         share: ONE_SIXTH,
-        explanation:
-          "Maternal grandmother gets 1/6 (no mother) (Rule 9a).",
+        explanation: { key: "explain.maternalGrandmother.sixth" },
       });
     }
   }
@@ -247,7 +231,7 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       if (hasHeir(input, "father")) {
         result.set("full_sister", {
           share: ZERO,
-          explanation: "Full sister is blocked by the presence of the father.",
+          explanation: { key: "explain.fullSister.blockedByFather" },
         });
       }
       // If grandfather (no father): handled by grandfather-siblings special case
@@ -258,13 +242,12 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       if (count === 1) {
         result.set("full_sister", {
           share: ONE_HALF,
-          explanation:
-            "Full sister gets 1/2 as the only full sister with no offspring, father, or full brother (Rule 10a).",
+          explanation: { key: "explain.fullSister.half" },
         });
       } else {
         result.set("full_sister", {
           share: TWO_THIRDS,
-          explanation: `Full sisters share 2/3 equally (${count} full sisters) (Rule 10b).`,
+          explanation: { key: "explain.fullSister.twoThirds", vars: { count } },
         });
       }
     }
@@ -277,15 +260,14 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       if (hasHeir(input, "son") || hasHeir(input, "grandson")) {
         result.set("paternal_sister", {
           share: ZERO,
-          explanation: "Paternal sister is blocked by male offspring.",
+          explanation: { key: "explain.paternalSister.blockedByMaleOffspring" },
         });
       }
       // With only female offspring: becomes asaba (handled by asaba calc)
     } else if (hasHeir(input, "father")) {
       result.set("paternal_sister", {
         share: ZERO,
-        explanation:
-          "Paternal sister is blocked by the presence of the father.",
+        explanation: { key: "explain.paternalSister.blockedByFather" },
       });
     } else if (
       hasHeir(input, "full_brother") ||
@@ -295,8 +277,7 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
         // Blocked by full brother (Rule 13f)
         result.set("paternal_sister", {
           share: ZERO,
-          explanation:
-            "Paternal sister is blocked by the presence of a full brother.",
+          explanation: { key: "explain.paternalSister.blockedByFullBrother" },
         });
       }
       // With paternal brother: enters asaba (2:1) - no fard
@@ -304,15 +285,13 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       // Blocked: 2+ full sisters already fill the 2/3 zone
       result.set("paternal_sister", {
         share: ZERO,
-        explanation:
-          "Paternal sister is blocked because 2 or more full sisters already take the 2/3 share.",
+        explanation: { key: "explain.paternalSister.blockedByFullSisters" },
       });
     } else if (heirCount(input, "full_sister") === 1) {
       // Gets 1/6 to complete 2/3
       result.set("paternal_sister", {
         share: ONE_SIXTH,
-        explanation:
-          "Paternal sister gets 1/6 to complete the 2/3 share with the single full sister (Rule 11c).",
+        explanation: { key: "explain.paternalSister.sixth" },
       });
     } else if (hasHeir(input, "grandfather")) {
       // Grandfather-siblings special case - handled later
@@ -321,13 +300,12 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       if (count === 1) {
         result.set("paternal_sister", {
           share: ONE_HALF,
-          explanation:
-            "Paternal sister gets 1/2 as the only paternal sister with no offspring, father, full brother, full sister, or paternal brother (Rule 11a).",
+          explanation: { key: "explain.paternalSister.half" },
         });
       } else {
         result.set("paternal_sister", {
           share: TWO_THIRDS,
-          explanation: `Paternal sisters share 2/3 equally (${count} paternal sisters) (Rule 11b).`,
+          explanation: { key: "explain.paternalSister.twoThirds", vars: { count } },
         });
       }
     }
@@ -340,12 +318,20 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
       if (hasMaleOffspring(input)) {
         result.set(mSibling, {
           share: ZERO,
-          explanation: `Maternal ${mSibling === "maternal_brother" ? "brother" : "sister"} is blocked by the presence of male offspring.`,
+          explanation: {
+            key: mSibling === "maternal_brother"
+              ? "explain.maternalBrother.blockedByOffspring"
+              : "explain.maternalSister.blockedByOffspring",
+          },
         });
       } else if (hasMalePaternalAncestor(input)) {
         result.set(mSibling, {
           share: ZERO,
-          explanation: `Maternal ${mSibling === "maternal_brother" ? "brother" : "sister"} is blocked by the presence of a male paternal ancestor.`,
+          explanation: {
+            key: mSibling === "maternal_brother"
+              ? "explain.maternalBrother.blockedByAncestor"
+              : "explain.maternalSister.blockedByAncestor",
+          },
         });
       } else {
         // Maternal siblings share equally (no 2:1 gender ratio - Rule 33)
@@ -356,13 +342,17 @@ export function calculateFard(input: HeirInput): Map<HeirType, FardResult> {
         if (totalMaternal === 1) {
           result.set(mSibling, {
             share: ONE_SIXTH,
-            explanation: `Maternal ${mSibling === "maternal_brother" ? "brother" : "sister"} gets 1/6 as the only maternal sibling (Rule 12a).`,
+            explanation: {
+              key: mSibling === "maternal_brother"
+                ? "explain.maternalBrother.sixth"
+                : "explain.maternalSister.sixth",
+            },
           });
         } else {
           // Multiple maternal siblings share 1/3
           result.set(mSibling, {
             share: ONE_THIRD,
-            explanation: `Maternal siblings share 1/3 equally (${totalMaternal} total maternal siblings) (Rule 12b).`,
+            explanation: { key: "explain.maternalSibling.third", vars: { count: totalMaternal } },
           });
         }
       }

@@ -48,6 +48,17 @@ export type HeirInput = Partial<Record<HeirType, number>>;
 export type ShareType = "fard" | "asaba" | "fard+asaba";
 
 /**
+ * A translatable explanation template.
+ * The key maps to a translation string; vars are substituted into it.
+ * prefix chains explanations (e.g., original explanation + awl/radd suffix).
+ */
+export interface ExplanationTemplate {
+  key: string;
+  vars?: Record<string, string | number>;
+  prefix?: ExplanationTemplate;
+}
+
+/**
  * A single heir's calculated share.
  */
 export interface HeirShare {
@@ -58,8 +69,8 @@ export interface HeirShare {
   totalShare: Fraction;
   /** Share per individual heir */
   individualShare: Fraction;
-  /** Human-readable explanation of why they receive this share */
-  explanation: string;
+  /** Translatable explanation of why they receive this share */
+  explanation: ExplanationTemplate;
 }
 
 /**
@@ -78,8 +89,8 @@ export interface CalculationResult {
   mushtarakaApplied: boolean;
   /** Whether the grandfather-siblings special case was applied */
   grandfatherSiblingsApplied: boolean;
-  /** Calculation steps as human-readable strings */
-  steps: string[];
+  /** Calculation steps as translatable templates */
+  steps: ExplanationTemplate[];
 }
 
 /**

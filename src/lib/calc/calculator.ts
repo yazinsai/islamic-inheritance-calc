@@ -4,10 +4,10 @@ import {
   HeirType,
   HeirShare,
   CalculationResult,
+  ExplanationTemplate,
   hasHeir,
   heirCount,
   hasOffspring,
-  HEIR_DISPLAY_NAMES,
 } from "./types";
 import { calculateFard } from "./fard";
 import { determineAsabaHeirs, distributeAsaba } from "./asaba";
@@ -33,10 +33,10 @@ export function calculate(input: HeirInput): CalculationResult {
     throw new Error("Cannot have both husband and wife as heirs.");
   }
 
-  const steps: string[] = [];
+  const steps: ExplanationTemplate[] = [];
   const allShares = new Map<
     HeirType,
-    { share: Fraction; explanation: string; shareType: "fard" | "asaba" | "fard+asaba" }
+    { share: Fraction; explanation: ExplanationTemplate; shareType: "fard" | "asaba" | "fard+asaba" }
   >();
 
   let awlApplied = false;
@@ -48,15 +48,15 @@ export function calculate(input: HeirInput): CalculationResult {
   // Step 1: Check for Umariyyah case first (it overrides normal fard)
   const umariyyahShares = new Map<
     HeirType,
-    { share: Fraction; explanation: string }
+    { share: Fraction; explanation: ExplanationTemplate }
   >();
   umariyyahApplied = applyUmariyyah(input, umariyyahShares);
 
   if (umariyyahApplied) {
-    steps.push("Umariyyah case detected (father + mother + spouse only). Applying special distribution (Rule 21).");
+    steps.push({ key: "step.umariyyah" });
     for (const [heir, data] of umariyyahShares) {
       allShares.set(heir, { ...data, shareType: "fard" });
-      steps.push(`${HEIR_DISPLAY_NAMES[heir]} gets ${data.share.toFraction()}.`);
+      steps.push({ key: "step.heirGets", vars: { heir, fraction: data.share.toFraction() } });
     }
 
     return buildResult(input, allShares, steps, {
@@ -90,9 +90,10 @@ export function calculate(input: HeirInput): CalculationResult {
       ) {
         allShares.set(heir, { ...data, shareType: "fard" });
         if (data.share.compare(ZERO) > 0) {
-          steps.push(
-            `${HEIR_DISPLAY_NAMES[heir]} gets prescribed share of ${data.share.toFraction()}.`,
-          );
+          steps.push({
+            key: "step.prescribed",
+            vars: { heir, fraction: data.share.toFraction() },
+          });
         }
       }
     }
@@ -100,7 +101,7 @@ export function calculate(input: HeirInput): CalculationResult {
     // Apply grandfather-siblings special case
     const gfShares = new Map<
       HeirType,
-      { share: Fraction; explanation: string }
+      { share: Fraction; explanation: ExplanationTemplate }
     >();
     // Copy non-sibling shares for the calculation
     for (const [heir, data] of allShares) {
@@ -110,9 +111,7 @@ export function calculate(input: HeirInput): CalculationResult {
     grandfatherSiblingsApplied = applyGrandfatherSiblings(input, gfShares);
 
     if (grandfatherSiblingsApplied) {
-      steps.push(
-        "Grandfather-Siblings special case applied (Rule 23).",
-      );
+      steps.push({ key: "step.grandfatherSiblings" });
       // Copy grandfather and sibling shares back
       for (const [heir, data] of gfShares) {
         if (
@@ -123,9 +122,10 @@ export function calculate(input: HeirInput): CalculationResult {
           heir === "paternal_sister"
         ) {
           allShares.set(heir, { ...data, shareType: "fard" });
-          steps.push(
-            `${HEIR_DISPLAY_NAMES[heir]} gets ${data.share.toFraction()}.`,
-          );
+          steps.push({
+            key: "step.heirGets",
+            vars: { heir, fraction: data.share.toFraction() },
+          });
         }
       }
 
@@ -135,27 +135,25 @@ export function calculate(input: HeirInput): CalculationResult {
         total = total.add(data.share);
       }
       if (total.compare(ONE) > 0) {
-        const awlShares = new Map<HeirType, { share: Fraction; explanation: string }>();
+        const awlShares = new Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>();
         for (const [heir, data] of allShares) {
           awlShares.set(heir, { share: data.share, explanation: data.explanation });
         }
         awlApplied = applyAwl(awlShares);
         if (awlApplied) {
-          steps.push("Total shares exceed 100%. Applying Awl (proportional reduction, Rule 18).");
+          steps.push({ key: "step.awl" });
           for (const [heir, data] of awlShares) {
             allShares.set(heir, { ...data, shareType: allShares.get(heir)!.shareType });
           }
 
           // Akdariyyah / Disturbing case (Rule 18a) - after awl with grandfather + sisters
-          const akdMap = new Map<HeirType, { share: Fraction; explanation: string }>();
+          const akdMap = new Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>();
           for (const [heir, data] of allShares) {
             akdMap.set(heir, { share: data.share, explanation: data.explanation });
           }
           const akdariyyahApplied = applyAkdariyyah(input, akdMap);
           if (akdariyyahApplied) {
-            steps.push(
-              "Akdariyyah case: grandfather and sisters' shares redistributed in 2:1 ratio (Rule 18a).",
-            );
+            steps.push({ key: "step.akdariyyah" });
             for (const [heir, data] of akdMap) {
               const existing = allShares.get(heir);
               if (existing) {
@@ -184,11 +182,15 @@ export function calculate(input: HeirInput): CalculationResult {
     allShares.set(heir, { ...data, shareType: "fard" });
     fardHeirSet.add(heir);
     if (data.share.compare(ZERO) > 0) {
-      steps.push(
-        `${HEIR_DISPLAY_NAMES[heir]} gets prescribed share of ${data.share.toFraction()}.`,
-      );
+      steps.push({
+        key: "step.prescribed",
+        vars: { heir, fraction: data.share.toFraction() },
+      });
     } else {
-      steps.push(`${HEIR_DISPLAY_NAMES[heir]} is blocked (${data.explanation}).`);
+      steps.push({
+        key: "step.blocked",
+        vars: { heir, explanation: data.explanation.key },
+      });
     }
   }
 
@@ -204,9 +206,10 @@ export function calculate(input: HeirInput): CalculationResult {
   const asabaResult = determineAsabaHeirs(input, fardHeirSet);
 
   if (asabaResult && remaining.compare(ZERO) > 0) {
-    steps.push(
-      `Distribute the remaining ${remaining.toFraction()} as residuary shares (Rule 14).`,
-    );
+    steps.push({
+      key: "step.distributeResiduary",
+      vars: { fraction: remaining.toFraction() },
+    });
     const asabaShares = distributeAsaba(remaining, asabaResult);
 
     for (const [heir, data] of asabaShares) {
@@ -215,15 +218,16 @@ export function calculate(input: HeirInput): CalculationResult {
         const existing = allShares.get(heir)!;
         allShares.set(heir, {
           share: existing.share.add(data.share),
-          explanation: existing.explanation + " " + data.explanation,
+          explanation: { ...data.explanation, prefix: existing.explanation },
           shareType: "fard+asaba",
         });
       } else {
         allShares.set(heir, { ...data, shareType: "asaba" });
       }
-      steps.push(
-        `${HEIR_DISPLAY_NAMES[heir]} gets ${data.share.toFraction()} as residuary (Rule 14).`,
-      );
+      steps.push({
+        key: "step.residuary",
+        vars: { heir, fraction: data.share.toFraction() },
+      });
     }
   } else if (asabaResult && remaining.compare(ZERO) <= 0) {
     // Asaba heirs exist but nothing left
@@ -232,7 +236,7 @@ export function calculate(input: HeirInput): CalculationResult {
       if (!allShares.has(asabaResult.heir)) {
         allShares.set(asabaResult.heir, {
           share: ZERO,
-          explanation: "No residuary share remaining after prescribed shares.",
+          explanation: { key: "explain.asaba.noRemainder" },
           shareType: "asaba",
         });
       }
@@ -241,7 +245,7 @@ export function calculate(input: HeirInput): CalculationResult {
       if (!allShares.has(asabaResult.femaleHeirType)) {
         allShares.set(asabaResult.femaleHeirType, {
           share: ZERO,
-          explanation: "No residuary share remaining after prescribed shares.",
+          explanation: { key: "explain.asaba.noRemainder" },
           shareType: "asaba",
         });
       }
@@ -255,7 +259,7 @@ export function calculate(input: HeirInput): CalculationResult {
     if (count && count > 0 && !allShares.has(heir)) {
       allShares.set(heir, {
         share: ZERO,
-        explanation: `${HEIR_DISPLAY_NAMES[heir]} does not receive a share in this configuration.`,
+        explanation: { key: "explain.noShare", vars: { heir } },
         shareType: "fard",
       });
     }
@@ -266,16 +270,14 @@ export function calculate(input: HeirInput): CalculationResult {
   // Mushtaraka (Rule 22)
   const mushtarakaMap = new Map<
     HeirType,
-    { share: Fraction; explanation: string }
+    { share: Fraction; explanation: ExplanationTemplate }
   >();
   for (const [heir, data] of allShares) {
     mushtarakaMap.set(heir, { share: data.share, explanation: data.explanation });
   }
   mushtarakaApplied = applyMushtaraka(input, mushtarakaMap);
   if (mushtarakaApplied) {
-    steps.push(
-      "Mushtaraka case applied: full brother(s) share with maternal siblings (Rule 22).",
-    );
+    steps.push({ key: "step.mushtaraka" });
     for (const [heir, data] of mushtarakaMap) {
       const existing = allShares.get(heir);
       if (existing) {
@@ -293,16 +295,14 @@ export function calculate(input: HeirInput): CalculationResult {
   if (total.compare(ONE) > 0) {
     const awlMap = new Map<
       HeirType,
-      { share: Fraction; explanation: string }
+      { share: Fraction; explanation: ExplanationTemplate }
     >();
     for (const [heir, data] of allShares) {
       awlMap.set(heir, { share: data.share, explanation: data.explanation });
     }
     awlApplied = applyAwl(awlMap);
     if (awlApplied) {
-      steps.push(
-        "Total shares exceed 100%. Applying Awl (proportional reduction, Rule 18).",
-      );
+      steps.push({ key: "step.awl" });
       for (const [heir, data] of awlMap) {
         const existing = allShares.get(heir);
         if (existing) {
@@ -313,15 +313,13 @@ export function calculate(input: HeirInput): CalculationResult {
       // Akdariyyah / Disturbing case (Rule 18a)
       // When awl applies and grandfather + sisters are present,
       // redistribute their combined share in 2:1 ratio
-      const akdMap = new Map<HeirType, { share: Fraction; explanation: string }>();
+      const akdMap = new Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }>();
       for (const [heir, data] of allShares) {
         akdMap.set(heir, { share: data.share, explanation: data.explanation });
       }
       const akdariyyahApplied = applyAkdariyyah(input, akdMap);
       if (akdariyyahApplied) {
-        steps.push(
-          "Akdariyyah case: grandfather and sisters' shares redistributed in 2:1 ratio (Rule 18a).",
-        );
+        steps.push({ key: "step.akdariyyah" });
         for (const [heir, data] of akdMap) {
           const existing = allShares.get(heir);
           if (existing) {
@@ -341,16 +339,14 @@ export function calculate(input: HeirInput): CalculationResult {
   if (total.compare(ONE) < 0 && !asabaResult) {
     const raddMap = new Map<
       HeirType,
-      { share: Fraction; explanation: string }
+      { share: Fraction; explanation: ExplanationTemplate }
     >();
     for (const [heir, data] of allShares) {
       raddMap.set(heir, { share: data.share, explanation: data.explanation });
     }
     raddApplied = applyRadd(input, raddMap);
     if (raddApplied) {
-      steps.push(
-        "Total shares are less than 100% with no residuary heirs. Applying Radd (proportional increase, Rule 19).",
-      );
+      steps.push({ key: "step.radd" });
       for (const [heir, data] of raddMap) {
         const existing = allShares.get(heir);
         if (existing) {
@@ -373,9 +369,9 @@ function buildResult(
   input: HeirInput,
   allShares: Map<
     HeirType,
-    { share: Fraction; explanation: string; shareType: "fard" | "asaba" | "fard+asaba" }
+    { share: Fraction; explanation: ExplanationTemplate; shareType: "fard" | "asaba" | "fard+asaba" }
   >,
-  steps: string[],
+  steps: ExplanationTemplate[],
   flags: {
     awlApplied: boolean;
     raddApplied: boolean;

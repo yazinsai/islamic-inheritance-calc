@@ -5,10 +5,11 @@ export type {
   HeirShare,
   CalculationResult,
   ShareType,
+  ExplanationTemplate,
 } from "./types";
 export {
-  HEIR_DISPLAY_NAMES,
   ILMSUMMIT_HEIR_MAP,
   hasHeir,
   heirCount,
 } from "./types";
+export { resolveExplanation } from "./explain";

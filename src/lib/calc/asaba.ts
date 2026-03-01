@@ -2,6 +2,7 @@ import Fraction from "fraction.js";
 import {
   HeirInput,
   HeirType,
+  ExplanationTemplate,
   hasHeir,
   heirCount,
   hasOffspring,
@@ -59,7 +60,7 @@ interface AsabaResult {
   femaleCount: number;
   /** The female heir type that shares in 2:1 ratio, if any */
   femaleHeirType: HeirType | null;
-  explanation: string;
+  explanation: ExplanationTemplate;
 }
 
 /**
@@ -140,13 +141,13 @@ export function determineAsabaHeirs(
     }
 
     if (maleCount > 0 || femaleCount > 0) {
-      let explanation: string;
+      let explanation: ExplanationTemplate;
       if (maleCount > 0 && femaleCount > 0) {
-        explanation = `Distributed as residuary (asaba) with 2:1 male-to-female ratio (Rule 15).`;
+        explanation = { key: "explain.asaba.twoToOne" };
       } else if (maleCount > 0) {
-        explanation = `Receives the remainder as residuary heir (asaba) (Rule 14).`;
+        explanation = { key: "explain.asaba.remainder" };
       } else {
-        explanation = `Becomes residuary heir (asaba) alongside female offspring (Rule 30e).`;
+        explanation = { key: "explain.asaba.withFemaleOffspring" };
       }
 
       return {
@@ -172,10 +173,10 @@ export function determineAsabaHeirs(
 export function distributeAsaba(
   remaining: Fraction,
   asaba: AsabaResult,
-): Map<HeirType, { share: Fraction; explanation: string }> {
+): Map<HeirType, { share: Fraction; explanation: ExplanationTemplate }> {
   const result = new Map<
     HeirType,
-    { share: Fraction; explanation: string }
+    { share: Fraction; explanation: ExplanationTemplate }
   >();
 
   if (remaining.compare(ZERO) <= 0) {
@@ -183,13 +184,13 @@ export function distributeAsaba(
     if (asaba.maleCount > 0 && asaba.heir) {
       result.set(asaba.heir, {
         share: ZERO,
-        explanation: "No residuary share remaining after prescribed shares.",
+        explanation: { key: "explain.asaba.noRemainder" },
       });
     }
     if (asaba.femaleCount > 0 && asaba.femaleHeirType) {
       result.set(asaba.femaleHeirType, {
         share: ZERO,
-        explanation: "No residuary share remaining after prescribed shares.",
+        explanation: { key: "explain.asaba.noRemainder" },
       });
     }
     return result;
@@ -200,16 +201,15 @@ export function distributeAsaba(
     const totalHeirType = asaba.maleCount > 0 ? asaba.heir : asaba.femaleHeirType!;
     result.set(totalHeirType, {
       share: remaining,
-      explanation:
-        asaba.maleCount > 0
-          ? `Receives the remaining ${remaining.toFraction()} as the highest-ranking residuary heir.`
-          : `Receives the remaining ${remaining.toFraction()} as residuary with female offspring.`,
+      explanation: asaba.maleCount > 0
+        ? { key: "explain.asaba.remainingHighest", vars: { fraction: remaining.toFraction() } }
+        : { key: "explain.asaba.remainingWithFemale", vars: { fraction: remaining.toFraction() } },
     });
   } else if (asaba.maleCount === 0 && asaba.femaleCount > 0) {
     // Only female heirs as asaba (sisters with daughters)
     result.set(asaba.femaleHeirType!, {
       share: remaining,
-      explanation: `Receives the remaining ${remaining.toFraction()} as residuary with female offspring.`,
+      explanation: { key: "explain.asaba.remainingWithFemale", vars: { fraction: remaining.toFraction() } },
     });
   } else {
     // Both male and female: 2:1 ratio (Rule 15)
@@ -222,12 +222,12 @@ export function distributeAsaba(
 
     result.set(asaba.heir, {
       share: maleTotal,
-      explanation: `Males receive 2 parts each in the 2:1 residuary distribution (total: ${maleTotal.toFraction()}).`,
+      explanation: { key: "explain.asaba.maleShare", vars: { fraction: maleTotal.toFraction() } },
     });
 
     result.set(asaba.femaleHeirType!, {
       share: femaleTotal,
-      explanation: `Females receive 1 part each in the 2:1 residuary distribution (total: ${femaleTotal.toFraction()}).`,
+      explanation: { key: "explain.asaba.femaleShare", vars: { fraction: femaleTotal.toFraction() } },
     });
   }
 
