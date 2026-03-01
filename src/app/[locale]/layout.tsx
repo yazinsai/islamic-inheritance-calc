@@ -41,6 +41,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={rtl ? "rtl" : "ltr"} className={rtl ? "locale-rtl" : ""}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var h=document.documentElement,t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches))h.setAttribute('data-theme','dark')})()` }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

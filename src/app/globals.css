@@ -37,11 +37,53 @@
   --color-gold-900: #6e3a1a;
   --color-gold-950: #3e1d0b;
 
+  --color-card: #ffffff;
+
   --font-display: "Cormorant Garamond", "Georgia", serif;
   --font-body: "IBM Plex Sans", "Helvetica Neue", sans-serif;
   --font-mono: "IBM Plex Mono", "Menlo", monospace;
   --font-display-ar: "Noto Naskh Arabic", "Noto Sans Arabic", serif;
   --font-body-ar: "Noto Sans Arabic", "Noto Naskh Arabic", sans-serif;
+}
+
+/* ─── Dark Mode ──────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-sand-50: #161311;
+  --color-sand-100: #1e1b17;
+  --color-sand-200: #302a23;
+  --color-sand-300: #4a4038;
+  --color-sand-400: #7a6b5c;
+  --color-sand-500: #958370;
+  --color-sand-600: #b09e8a;
+  --color-sand-700: #c8b8a4;
+  --color-sand-800: #ddd0c0;
+  --color-sand-900: #ede6db;
+  --color-sand-950: #f5f0e8;
+
+  --color-sage-50: #161c14;
+  --color-sage-100: #1c2a1a;
+  --color-sage-200: #283d26;
+  --color-sage-400: #8aab80;
+  --color-sage-500: #72a066;
+  --color-sage-600: #608855;
+
+  --color-gold-50: #1c1810;
+  --color-gold-100: #28220f;
+  --color-gold-200: #3d3018;
+  --color-gold-500: #e6a838;
+  --color-gold-700: #d49a2a;
+
+  --color-card: #1e1b17;
+}
+
+[data-theme="dark"] .geometric-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%234a4038' stroke-width='0.5' opacity='0.3'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z'/%3E%3Cpath d='M30 10 L50 30 L30 50 L10 30Z'/%3E%3Cpath d='M30 20 L40 30 L30 40 L20 30Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .geometric-border {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='8' viewBox='0 0 40 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4 L5 0 L10 4 L15 0 L20 4 L25 0 L30 4 L35 0 L40 4' fill='none' stroke='%23d49a2a' stroke-width='1' opacity='0.25'/%3E%3C/svg%3E");
 }
 
 /* Islamic geometric pattern as SVG background */

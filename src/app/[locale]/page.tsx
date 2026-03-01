@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { calculate, type CalculationResult, type ExplanationTemplate } from "@/lib/calc";
 import { resolveExplanation } from "@/lib/calc/explain";
 import { getFormSections, type FormSection, type FormField } from "@/lib/form-logic";
@@ -94,6 +94,67 @@ function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
   );
 }
 
+// ─── Theme Toggle ───────────────────────────────────────────────────
+function ThemeToggle() {
+  const [mode, setMode] = useState<"system" | "light" | "dark">("system");
+
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") setMode(stored);
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = () => {
+      const t = localStorage.getItem("theme");
+      if (!t || t === "system") {
+        if (mq.matches) document.documentElement.setAttribute("data-theme", "dark");
+        else document.documentElement.removeAttribute("data-theme");
+      }
+    };
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const cycle = useCallback(() => {
+    setMode((prev) => {
+      const next = prev === "system" ? "light" : prev === "light" ? "dark" : "system";
+      const html = document.documentElement;
+      if (next === "dark") {
+        localStorage.setItem("theme", "dark");
+        html.setAttribute("data-theme", "dark");
+      } else if (next === "light") {
+        localStorage.setItem("theme", "light");
+        html.removeAttribute("data-theme");
+      } else {
+        localStorage.removeItem("theme");
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          html.setAttribute("data-theme", "dark");
+        } else {
+          html.removeAttribute("data-theme");
+        }
+      }
+      return next;
+    });
+  }, []);
+
+  const icon =
+    mode === "dark"
+      ? "solar:moon-bold-duotone"
+      : mode === "light"
+        ? "solar:sun-bold-duotone"
+        : "solar:monitor-bold-duotone";
+
+  return (
+    <button
+      type="button"
+      onClick={cycle}
+      className="absolute top-4 end-4 w-8 h-8 rounded-lg bg-sand-100/80 hover:bg-sand-200
+                 text-sand-500 hover:text-sand-600 transition-colors flex items-center justify-center z-10"
+      aria-label={`Theme: ${mode}`}
+    >
+      <Icon icon={icon} className="text-lg" />
+    </button>
+  );
+}
+
 // ─── Heir Counter Input ──────────────────────────────────────────────
 function HeirCounter({
   field,
@@ -125,7 +186,7 @@ function HeirCounter({
           <Icon icon="solar:minus-circle-linear" className="text-lg" />
         </button>
         <div
-          className="w-10 h-8 bg-white border-y border-sand-200 flex items-center
+          className="w-10 h-8 bg-card border-y border-sand-200 flex items-center
                       justify-center text-sm font-mono text-sand-800 select-none"
         >
           {localizeDigits(String(value), locale)}
@@ -184,7 +245,7 @@ function FormSectionCard({
             <span className="text-xs text-sand-400">{t(section.subtitleKey)}</span>
           )}
         </div>
-        <div className="bg-white rounded-xl border border-sand-200/80 px-4 collapse-fields">
+        <div className="bg-card rounded-xl border border-sand-200/80 px-4 collapse-fields">
           {section.fields.map((field) => (
             <Collapse key={field.heir} open={field.visible}>
               <HeirCounter
@@ -371,7 +432,7 @@ function Results({
   return (
     <div className="space-y-4">
       {/* Summary header */}
-      <div className="bg-white rounded-xl border border-sand-200/80 p-4">
+      <div className="bg-card rounded-xl border border-sand-200/80 p-4">
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
             <Icon icon="solar:chart-square-bold-duotone" className="text-xl text-sage-500" />
@@ -397,7 +458,7 @@ function Results({
       </div>
 
       {/* Active shares */}
-      <div className="bg-white rounded-xl border border-sand-200/80 divide-y divide-sand-100 overflow-hidden">
+      <div className="bg-card rounded-xl border border-sand-200/80 divide-y divide-sand-100 overflow-hidden">
         {activeShares.map((s, i) => (
           <ShareRow
             key={s.heir}
@@ -423,7 +484,7 @@ function Results({
             <Icon icon="solar:eye-closed-linear" className="text-sm" />
             {blockedCountText}
           </summary>
-          <div className="mt-2 bg-white rounded-xl border border-sand-200/80 divide-y divide-sand-50 overflow-hidden">
+          <div className="mt-2 bg-card rounded-xl border border-sand-200/80 divide-y divide-sand-50 overflow-hidden">
             {blockedShares.map((s, i) => (
               <ShareRow
                 key={s.heir}
@@ -451,7 +512,7 @@ function Results({
             <Icon icon="solar:list-check-minimalistic-bold" className="text-sm" />
             {t("result.steps", { count: result.steps.length })}
           </summary>
-          <div className="mt-2 bg-white rounded-xl border border-sand-200/80 p-4">
+          <div className="mt-2 bg-card rounded-xl border border-sand-200/80 p-4">
             <ol className="space-y-1.5">
               {result.steps.map((step, i) => (
                 <li key={i} className="text-xs text-sand-600 leading-relaxed flex gap-2">
@@ -546,6 +607,7 @@ export default function Home() {
     <div className="min-h-screen geometric-pattern">
       {/* Header */}
       <header className="relative bg-sand-50/90 backdrop-blur-sm border-b border-sand-200/60">
+        <ThemeToggle />
         <div className="max-w-lg mx-auto px-4 py-5">
           <div className="text-center">
             <div className="geometric-border mb-3" />
@@ -571,7 +633,7 @@ export default function Home() {
               {t("deceased.title")}
             </h2>
           </div>
-          <div className="bg-white rounded-xl border border-sand-200/80 p-4 space-y-4">
+          <div className="bg-card rounded-xl border border-sand-200/80 p-4 space-y-4">
             {/* Gender */}
             <div>
               <label className="text-xs text-sand-500 mb-2 block">{t("deceased.gender")}</label>
