@@ -1,6 +1,10 @@
 # Islamic Inheritance Calculator
 
-A web app that calculates Islamic inheritance shares (faraid) based on Quranic verses and Sunnah. Enter who the deceased left behind, and it tells you exactly how the estate is divided.
+Most Islamic inheritance calculators throw every possible heir at you in one big form, whether they're relevant or not. You end up staring at 20+ fields, unsure which ones matter. This one takes the opposite approach — it only asks what it needs to.
+
+The form adapts as you go. If the deceased has sons, you won't be asked about grandsons (they're blocked by Islamic law). If there's a father, the siblings section disappears entirely (Hanafi school). Fields appear and vanish based on the actual rules of faraid, so you're never guessing which inputs matter and which don't.
+
+The goal is that anyone — not just someone who studied inheritance law — can use this and get a correct answer.
 
 ![Screenshot](docs/screenshot.png)
 
@@ -9,9 +13,7 @@ A web app that calculates Islamic inheritance shares (faraid) based on Quranic v
 1. Select the deceased's gender
 2. Enter which heirs are alive (spouse, children, parents, siblings, etc.)
 3. Optionally enter the estate value
-4. Get the exact fractional shares for each heir, with explanations
-
-The form dynamically hides irrelevant fields. If the deceased has sons, you won't be asked about grandsons (they're blocked). If there's a father, siblings are hidden (Hanafi school). Only the minimum necessary questions are shown.
+4. Get the exact fractional shares for each heir, with plain-language explanations
 
 ## What it handles
 
