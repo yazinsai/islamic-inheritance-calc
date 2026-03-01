@@ -124,36 +124,6 @@ export const ILMSUMMIT_HEIR_MAP: Record<string, HeirType> = {
 };
 
 /**
- * Display names for heirs (English).
- */
-export const HEIR_DISPLAY_NAMES: Record<HeirType, string> = {
-  husband: "Husband",
-  wife: "Wife",
-  son: "Son",
-  daughter: "Daughter",
-  grandson: "Grandson (son's son)",
-  granddaughter: "Granddaughter (son's daughter)",
-  father: "Father",
-  mother: "Mother",
-  grandfather: "Grandfather (paternal)",
-  paternal_grandmother: "Grandmother (paternal)",
-  maternal_grandmother: "Grandmother (maternal)",
-  full_brother: "Full Brother",
-  full_sister: "Full Sister",
-  paternal_brother: "Paternal Half-Brother",
-  paternal_sister: "Paternal Half-Sister",
-  maternal_brother: "Maternal Half-Brother",
-  maternal_sister: "Maternal Half-Sister",
-  full_nephew: "Full Nephew (brother's son)",
-  paternal_nephew: "Paternal Nephew",
-  full_uncle: "Full Uncle (paternal)",
-  paternal_uncle: "Paternal Uncle",
-  full_cousin: "Full Cousin",
-  paternal_cousin: "Paternal Cousin",
-  paternal_cousins_grandson: "Paternal Cousin's Grandson",
-};
-
-/**
  * Helper to check if a specific heir exists in input.
  */
 export function hasHeir(input: HeirInput, heir: HeirType): boolean {

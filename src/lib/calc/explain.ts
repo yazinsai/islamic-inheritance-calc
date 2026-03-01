@@ -10,7 +10,15 @@ export function resolveExplanation(
   if (template.vars) {
     for (const [k, v] of Object.entries(template.vars)) {
       // Special handling: "heir" vars get looked up as "heir.{value}"
-      const resolved = k === "heir" ? (messages[`heir.${v}`] ?? String(v)) : String(v);
+      let resolved: string;
+      if (k === "heir") {
+        resolved = messages[`heir.${v}`] ?? String(v);
+      } else if (typeof v === "string" && messages[v] !== undefined) {
+        // Nested translation key (e.g., method.a → "A (1/6 of estate)")
+        resolved = messages[v];
+      } else {
+        resolved = String(v);
+      }
       msg = msg.replaceAll(`{${k}}`, resolved);
     }
   }

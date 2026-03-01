@@ -1,9 +1,12 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import { calculate, type HeirInput, type CalculationResult } from "@/lib/calc";
-import { HEIR_DISPLAY_NAMES } from "@/lib/calc/types";
+import { calculate, type CalculationResult, type ExplanationTemplate } from "@/lib/calc";
+import { resolveExplanation } from "@/lib/calc/explain";
 import { getFormSections, type FormSection, type FormField } from "@/lib/form-logic";
+import { useTranslations, useMessages, useLocale } from "@/i18n/context";
+import { locales, localeNames, isRtl, type Locale } from "@/i18n/config";
+import type { HeirInput } from "@/lib/calc";
 import Fraction from "fraction.js";
 
 // ─── Fraction Display ────────────────────────────────────────────────
@@ -23,33 +26,67 @@ function toPercent(f: Fraction): string {
   return (f.valueOf() * 100).toFixed(2).replace(/\.?0+$/, "") + "%";
 }
 
+function formatCurrency(n: number): string {
+  if (n === 0) return "0";
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(2).replace(/\.?0+$/, "") + "M";
+  if (n >= 1_000) return (n / 1_000).toFixed(2).replace(/\.?0+$/, "") + "K";
+  return n.toFixed(2).replace(/\.?0+$/, "");
+}
+
+// ─── Language Switcher ───────────────────────────────────────────────
+function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
+  return (
+    <nav className="flex flex-wrap justify-center gap-x-1 gap-y-1 mt-3" aria-label="Language">
+      {locales.map((loc, i) => (
+        <span key={loc} className="flex items-center">
+          {i > 0 && (
+            <span className="text-gold-400 text-[6px] mx-1.5 select-none">◆</span>
+          )}
+          <a
+            href={`/${loc}`}
+            className={`text-[11px] transition-colors relative pb-0.5 ${
+              loc === currentLocale
+                ? "text-sand-800 font-medium"
+                : "text-sand-400 hover:text-sand-600"
+            }`}
+            lang={loc}
+          >
+            {localeNames[loc]}
+            {loc === currentLocale && (
+              <span className="absolute bottom-0 inset-x-0 h-0.5 bg-gold-500 rounded-full" />
+            )}
+          </a>
+        </span>
+      ))}
+    </nav>
+  );
+}
+
 // ─── Heir Counter Input ──────────────────────────────────────────────
 function HeirCounter({
   field,
   value,
   onChange,
+  t,
 }: {
   field: FormField;
   value: number;
   onChange: (heir: string, val: number) => void;
+  t: (key: string, vars?: Record<string, string | number>) => string;
 }) {
+  const label = t(field.labelKey);
   return (
     <div className="flex items-center justify-between py-2.5 px-1 group">
-      <label className="text-sand-700 text-[15px] select-none">
-        {field.label}
-        {field.hint && (
-          <span className="text-sand-400 text-xs ml-1.5">({field.hint})</span>
-        )}
-      </label>
+      <label className="text-sand-700 text-[15px] select-none">{label}</label>
       <div className="flex items-center gap-0">
         <button
           type="button"
           onClick={() => onChange(field.heir, Math.max(0, value - 1))}
           disabled={value === 0}
-          className="w-8 h-8 rounded-l-md bg-sand-100 hover:bg-sand-200 text-sand-600
+          className="w-8 h-8 rounded-s-md bg-sand-100 hover:bg-sand-200 text-sand-600
                      disabled:opacity-30 disabled:cursor-default transition-colors
                      flex items-center justify-center text-lg font-light select-none"
-          aria-label={`Decrease ${field.label}`}
+          aria-label={t("aria.decrease", { label })}
         >
           −
         </button>
@@ -63,10 +100,10 @@ function HeirCounter({
           type="button"
           onClick={() => onChange(field.heir, Math.min(field.max, value + 1))}
           disabled={value >= field.max}
-          className="w-8 h-8 rounded-r-md bg-sand-100 hover:bg-sand-200 text-sand-600
+          className="w-8 h-8 rounded-e-md bg-sand-100 hover:bg-sand-200 text-sand-600
                      disabled:opacity-30 disabled:cursor-default transition-colors
                      flex items-center justify-center text-lg font-light select-none"
-          aria-label={`Increase ${field.label}`}
+          aria-label={t("aria.increase", { label })}
         >
           +
         </button>
@@ -80,10 +117,12 @@ function FormSectionCard({
   section,
   input,
   onChange,
+  t,
 }: {
   section: FormSection;
   input: HeirInput;
   onChange: (heir: string, val: number) => void;
+  t: (key: string, vars?: Record<string, string | number>) => string;
 }) {
   const visibleFields = section.fields.filter((f) => f.visible);
   if (visibleFields.length === 0) return null;
@@ -92,10 +131,10 @@ function FormSectionCard({
     <div className="section-enter">
       <div className="flex items-baseline gap-2 mb-1">
         <h3 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
-          {section.title}
+          {t(section.titleKey)}
         </h3>
-        {section.subtitle && (
-          <span className="text-xs text-sand-400">{section.subtitle}</span>
+        {section.subtitleKey && (
+          <span className="text-xs text-sand-400">{t(section.subtitleKey)}</span>
         )}
       </div>
       <div className="bg-white rounded-xl border border-sand-200/80 px-4 divide-y divide-sand-100">
@@ -105,6 +144,7 @@ function FormSectionCard({
             field={field}
             value={input[field.heir as keyof HeirInput] ?? 0}
             onChange={onChange}
+            t={t}
           />
         ))}
       </div>
@@ -122,21 +162,33 @@ function ShareRow({
   shareType,
   estateAmount,
   index,
+  t,
+  messages,
 }: {
   heir: string;
   count: number;
   totalShare: Fraction;
   individualShare: Fraction;
-  explanation: string;
+  explanation: ExplanationTemplate;
   shareType: string;
   estateAmount: number;
   index: number;
+  t: (key: string, vars?: Record<string, string | number>) => string;
+  messages: Record<string, string>;
 }) {
   const pct = totalShare.valueOf() * 100;
   const amount = estateAmount * totalShare.valueOf();
   const perPerson = estateAmount * individualShare.valueOf();
   const isBlocked = totalShare.valueOf() === 0;
-  const displayName = HEIR_DISPLAY_NAMES[heir as keyof typeof HEIR_DISPLAY_NAMES] || heir;
+  const displayName = t(`heir.${heir}`);
+  const explanationText = resolveExplanation(explanation, messages);
+
+  const shareTypeLabel =
+    shareType === "fard"
+      ? t("result.fard")
+      : shareType === "asaba"
+        ? t("result.asaba")
+        : t("result.fardAsaba");
 
   if (isBlocked) {
     return (
@@ -148,11 +200,11 @@ function ShareRow({
         <div className="min-w-0 flex-1">
           <div className="text-sm text-sand-500 line-through">
             {displayName}
-            {count > 1 && <span className="text-xs ml-1">×{count}</span>}
+            {count > 1 && <span className="text-xs ms-1">×{count}</span>}
           </div>
-          <p className="text-xs text-sand-400 mt-0.5 leading-snug">{explanation}</p>
+          <p className="text-xs text-sand-400 mt-0.5 leading-snug">{explanationText}</p>
         </div>
-        <div className="text-xs text-sand-400 shrink-0">Blocked</div>
+        <div className="text-xs text-sand-400 shrink-0">{t("result.blocked")}</div>
       </div>
     );
   }
@@ -189,12 +241,12 @@ function ShareRow({
                     : "bg-sage-50 text-sage-700"
               }`}
             >
-              {shareType === "fard+asaba" ? "fard + asaba" : shareType}
+              {shareTypeLabel}
             </span>
           </div>
-          <p className="text-xs text-sand-500 mt-1 leading-snug">{explanation}</p>
+          <p className="text-xs text-sand-500 mt-1 leading-snug">{explanationText}</p>
         </div>
-        <div className="text-right shrink-0">
+        <div className="text-end shrink-0">
           <div className="text-lg font-display font-semibold text-sand-800">
             <FractionDisplay value={totalShare} />
           </div>
@@ -205,7 +257,7 @@ function ShareRow({
       {/* Share bar */}
       <div className="h-1.5 bg-sand-100 rounded-full overflow-hidden mb-2">
         <div
-          className={`share-bar h-full rounded-full ${barColor} origin-left`}
+          className={`share-bar h-full rounded-full ${barColor} origin-left rtl:origin-right`}
           style={{
             width: `${Math.max(pct, 1)}%`,
             animationDelay: `${index * 60 + 200}ms`,
@@ -217,11 +269,11 @@ function ShareRow({
       {estateAmount > 0 && (
         <div className="flex items-center justify-between text-xs text-sand-500">
           <span>
-            Total: <span className="font-mono font-medium text-sand-700">{formatCurrency(amount)}</span>
+            {t("result.total")}: <span className="font-mono font-medium text-sand-700">{formatCurrency(amount)}</span>
           </span>
           {count > 1 && (
             <span>
-              Each: <span className="font-mono font-medium text-sand-700">{formatCurrency(perPerson)}</span>
+              {t("result.each")}: <span className="font-mono font-medium text-sand-700">{formatCurrency(perPerson)}</span>
             </span>
           )}
         </div>
@@ -230,30 +282,37 @@ function ShareRow({
   );
 }
 
-function formatCurrency(n: number): string {
-  if (n === 0) return "0";
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(2).replace(/\.?0+$/, "") + "M";
-  if (n >= 1_000) return (n / 1_000).toFixed(2).replace(/\.?0+$/, "") + "K";
-  return n.toFixed(2).replace(/\.?0+$/, "");
-}
-
 // ─── Results Panel ───────────────────────────────────────────────────
 function Results({
   result,
   estateAmount,
+  t,
+  messages,
 }: {
   result: CalculationResult;
   estateAmount: number;
+  t: (key: string, vars?: Record<string, string | number>) => string;
+  messages: Record<string, string>;
 }) {
   const activeShares = result.shares.filter((s) => s.totalShare.valueOf() > 0);
   const blockedShares = result.shares.filter((s) => s.totalShare.valueOf() === 0);
 
   const specialCases: string[] = [];
-  if (result.awlApplied) specialCases.push("Awl (proportional reduction)");
-  if (result.raddApplied) specialCases.push("Radd (return of surplus)");
-  if (result.umariyyahApplied) specialCases.push("Umariyyah");
-  if (result.mushtarakaApplied) specialCases.push("Mushtaraka");
-  if (result.grandfatherSiblingsApplied) specialCases.push("Grandfather–Siblings");
+  if (result.awlApplied) specialCases.push(t("special.awl"));
+  if (result.raddApplied) specialCases.push(t("special.radd"));
+  if (result.umariyyahApplied) specialCases.push(t("special.umariyyah"));
+  if (result.mushtarakaApplied) specialCases.push(t("special.mushtaraka"));
+  if (result.grandfatherSiblingsApplied) specialCases.push(t("special.grandfatherSiblings"));
+
+  const heirCountText =
+    activeShares.length === 1
+      ? t("result.heirCount", { count: activeShares.length })
+      : t("result.heirCountPlural", { count: activeShares.length });
+
+  const blockedCountText =
+    blockedShares.length === 1
+      ? t("result.blockedCount", { count: blockedShares.length })
+      : t("result.blockedCountPlural", { count: blockedShares.length });
 
   return (
     <div className="space-y-4">
@@ -261,11 +320,9 @@ function Results({
       <div className="bg-white rounded-xl border border-sand-200/80 p-4">
         <div className="flex items-center justify-between mb-2">
           <h2 className="font-display text-xl font-semibold text-sand-800">
-            Distribution
+            {t("result.title")}
           </h2>
-          <span className="text-xs text-sand-400">
-            {activeShares.length} heir{activeShares.length !== 1 ? "s" : ""} receive shares
-          </span>
+          <span className="text-xs text-sand-400">{heirCountText}</span>
         </div>
         {specialCases.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mt-2">
@@ -295,6 +352,8 @@ function Results({
             shareType={s.shareType}
             estateAmount={estateAmount}
             index={i}
+            t={t}
+            messages={messages}
           />
         ))}
       </div>
@@ -303,8 +362,7 @@ function Results({
       {blockedShares.length > 0 && (
         <details className="group">
           <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none">
-            {blockedShares.length} heir{blockedShares.length !== 1 ? "s" : ""} blocked from
-            inheriting
+            {blockedCountText}
           </summary>
           <div className="mt-2 bg-white rounded-xl border border-sand-200/80 divide-y divide-sand-50 overflow-hidden">
             {blockedShares.map((s, i) => (
@@ -318,6 +376,8 @@ function Results({
                 shareType={s.shareType}
                 estateAmount={0}
                 index={i}
+                t={t}
+                messages={messages}
               />
             ))}
           </div>
@@ -328,16 +388,16 @@ function Results({
       {result.steps.length > 0 && (
         <details className="group">
           <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none">
-            View calculation steps ({result.steps.length})
+            {t("result.steps", { count: result.steps.length })}
           </summary>
           <div className="mt-2 bg-white rounded-xl border border-sand-200/80 p-4">
             <ol className="space-y-1.5">
               {result.steps.map((step, i) => (
                 <li key={i} className="text-xs text-sand-600 leading-relaxed flex gap-2">
-                  <span className="text-sand-300 font-mono shrink-0 w-4 text-right">
+                  <span className="text-sand-300 font-mono shrink-0 w-4 text-end">
                     {i + 1}.
                   </span>
-                  <span>{step}</span>
+                  <span>{resolveExplanation(step, messages)}</span>
                 </li>
               ))}
             </ol>
@@ -349,11 +409,11 @@ function Results({
       <div className="flex items-center justify-center gap-4 text-[10px] text-sand-400 py-1">
         <span className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-sage-400" />
-          Fard (prescribed)
+          {t("legend.fard")}
         </span>
         <span className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-gold-500" />
-          Asaba (residuary)
+          {t("legend.asaba")}
         </span>
       </div>
     </div>
@@ -362,6 +422,11 @@ function Results({
 
 // ─── Main Page ───────────────────────────────────────────────────────
 export default function Home() {
+  const t = useTranslations();
+  const locale = useLocale();
+  const messages = useMessages();
+  const rtl = isRtl(locale);
+
   const [deceasedGender, setDeceasedGender] = useState<"male" | "female">("male");
   const [input, setInput] = useState<HeirInput>({});
   const [estateAmount, setEstateAmount] = useState<string>("");
@@ -386,7 +451,6 @@ export default function Home() {
     setDeceasedGender(g);
     setInput((prev) => {
       const next = { ...prev };
-      // Clear spouse when gender changes
       delete next.husband;
       delete next.wife;
       return next;
@@ -425,11 +489,12 @@ export default function Home() {
           <div className="text-center">
             <div className="geometric-border mb-3" />
             <h1 className="font-display text-2xl sm:text-3xl font-semibold text-sand-800 tracking-tight">
-              Islamic Inheritance
+              {t("header.title")}
             </h1>
             <p className="text-sm text-sand-500 mt-1 font-light">
-              Faraid Calculator
+              {t("header.subtitle")}
             </p>
+            <LanguageSwitcher currentLocale={locale} />
             <div className="geometric-border mt-3" />
           </div>
         </div>
@@ -440,12 +505,12 @@ export default function Home() {
         {/* Deceased info */}
         <div>
           <h2 className="text-sm font-semibold text-sand-600 uppercase tracking-wider mb-2">
-            The Deceased
+            {t("deceased.title")}
           </h2>
           <div className="bg-white rounded-xl border border-sand-200/80 p-4 space-y-4">
             {/* Gender */}
             <div>
-              <label className="text-xs text-sand-500 mb-2 block">Gender</label>
+              <label className="text-xs text-sand-500 mb-2 block">{t("deceased.gender")}</label>
               <div className="grid grid-cols-2 gap-2">
                 {(["male", "female"] as const).map((g) => (
                   <button
@@ -458,7 +523,7 @@ export default function Home() {
                         : "bg-sand-100 text-sand-500 hover:bg-sand-200"
                     }`}
                   >
-                    {g === "male" ? "Male" : "Female"}
+                    {g === "male" ? t("deceased.male") : t("deceased.female")}
                   </button>
                 ))}
               </div>
@@ -467,7 +532,8 @@ export default function Home() {
             {/* Estate amount */}
             <div>
               <label className="text-xs text-sand-500 mb-2 block">
-                Net Estate Value <span className="text-sand-300">(optional)</span>
+                {t("deceased.estate")}{" "}
+                <span className="text-sand-300">{t("deceased.estate.optional")}</span>
               </label>
               <div className="relative">
                 <input
@@ -477,6 +543,7 @@ export default function Home() {
                   placeholder="0"
                   min="0"
                   step="any"
+                  dir="ltr"
                   className="w-full bg-sand-50 border border-sand-200 rounded-lg px-4 py-2.5
                              text-sm font-mono text-sand-800 placeholder:text-sand-300
                              focus:outline-none focus:ring-2 focus:ring-sage-400/30 focus:border-sage-400
@@ -484,7 +551,7 @@ export default function Home() {
                 />
               </div>
               <p className="text-[11px] text-sand-400 mt-1.5 leading-relaxed">
-                After debts, funeral costs, and bequests (wasiyyah). Leave blank for fractions only.
+                {t("deceased.estate.hint")}
               </p>
             </div>
           </div>
@@ -494,7 +561,7 @@ export default function Home() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
-              Heirs
+              {t("heirs.title")}
             </h2>
             {hasAnyHeirs && (
               <button
@@ -502,7 +569,7 @@ export default function Home() {
                 onClick={handleReset}
                 className="text-xs text-sand-400 hover:text-sand-600 transition-colors"
               >
-                Reset all
+                {t("heirs.reset")}
               </button>
             )}
           </div>
@@ -515,6 +582,7 @@ export default function Home() {
                 section={section}
                 input={input}
                 onChange={handleHeirChange}
+                t={t}
               />
             ))}
         </div>
@@ -523,7 +591,7 @@ export default function Home() {
         {result && hasAnyHeirs && (
           <>
             <div className="geometric-border" />
-            <Results result={result} estateAmount={estate} />
+            <Results result={result} estateAmount={estate} t={t} messages={messages} />
           </>
         )}
 
@@ -531,7 +599,7 @@ export default function Home() {
         {!hasAnyHeirs && (
           <div className="text-center py-8">
             <p className="text-sand-400 text-sm">
-              Add heirs above to calculate inheritance shares.
+              {t("heirs.empty")}
             </p>
           </div>
         )}
@@ -541,9 +609,9 @@ export default function Home() {
       <footer className="fixed bottom-0 inset-x-0 bg-sand-50/90 backdrop-blur-sm border-t border-sand-200/60">
         <div className="max-w-lg mx-auto px-4 py-3">
           <p className="text-[10px] text-sand-400 text-center leading-relaxed">
-            Based on Quranic verses and Sunnah. Verified against 133 scholarly test cases.
+            {t("footer.line1")}
             <br />
-            Consult a qualified scholar for complex cases.
+            {t("footer.line2")}
           </p>
         </div>
       </footer>

@@ -18,18 +18,17 @@ import { HeirInput, HeirType, hasHeir } from "./calc/types";
 
 export interface FormSection {
   id: string;
-  title: string;
-  subtitle?: string;
+  titleKey: string;
+  subtitleKey?: string;
   fields: FormField[];
   visible: boolean;
 }
 
 export interface FormField {
   heir: HeirType;
-  label: string;
+  labelKey: string;
   max: number;
   visible: boolean;
-  hint?: string;
 }
 
 export function getFormSections(
@@ -63,11 +62,11 @@ export function getFormSections(
     // Section 1: Spouse
     {
       id: "spouse",
-      title: "Spouse",
+      titleKey: "section.spouse",
       fields: [
         {
           heir: deceasedGender === "male" ? "wife" : "husband",
-          label: deceasedGender === "male" ? "Wife" : "Husband",
+          labelKey: deceasedGender === "male" ? "form.wife" : "form.husband",
           max: deceasedGender === "male" ? 4 : 1,
           visible: true,
         },
@@ -78,10 +77,10 @@ export function getFormSections(
     // Section 2: Children
     {
       id: "children",
-      title: "Children",
+      titleKey: "section.children",
       fields: [
-        { heir: "son", label: "Sons", max: 20, visible: true },
-        { heir: "daughter", label: "Daughters", max: 20, visible: true },
+        { heir: "son", labelKey: "form.sons", max: 20, visible: true },
+        { heir: "daughter", labelKey: "form.daughters", max: 20, visible: true },
       ],
       visible: true,
     },
@@ -89,13 +88,13 @@ export function getFormSections(
     // Section 3: Grandchildren (only shown if no sons)
     {
       id: "grandchildren",
-      title: "Grandchildren",
-      subtitle: "Through sons only",
+      titleKey: "section.grandchildren",
+      subtitleKey: "section.grandchildren.hint",
       fields: [
-        { heir: "grandson", label: "Grandsons", max: 20, visible: !hasSon },
+        { heir: "grandson", labelKey: "form.grandsons", max: 20, visible: !hasSon },
         {
           heir: "granddaughter",
-          label: "Granddaughters",
+          labelKey: "form.granddaughters",
           max: 20,
           visible: !hasSon,
         },
@@ -106,10 +105,10 @@ export function getFormSections(
     // Section 4: Parents
     {
       id: "parents",
-      title: "Parents",
+      titleKey: "section.parents",
       fields: [
-        { heir: "father", label: "Father", max: 1, visible: true },
-        { heir: "mother", label: "Mother", max: 1, visible: true },
+        { heir: "father", labelKey: "form.father", max: 1, visible: true },
+        { heir: "mother", labelKey: "form.mother", max: 1, visible: true },
       ],
       visible: true,
     },
@@ -117,23 +116,23 @@ export function getFormSections(
     // Section 5: Grandparents
     {
       id: "grandparents",
-      title: "Grandparents",
+      titleKey: "section.grandparents",
       fields: [
         {
           heir: "grandfather",
-          label: "Paternal Grandfather",
+          labelKey: "form.paternalGrandfather",
           max: 1,
           visible: !hasFather,
         },
         {
           heir: "paternal_grandmother",
-          label: "Paternal Grandmother",
+          labelKey: "form.paternalGrandmother",
           max: 1,
           visible: !hasFather && !hasMother,
         },
         {
           heir: "maternal_grandmother",
-          label: "Maternal Grandmother",
+          labelKey: "form.maternalGrandmother",
           max: 1,
           visible: !hasMother,
         },
@@ -144,18 +143,18 @@ export function getFormSections(
     // Section 6: Full Siblings (only if no sons/grandsons, and no father)
     {
       id: "full_siblings",
-      title: "Full Siblings",
-      subtitle: "Same father and mother",
+      titleKey: "section.fullSiblings",
+      subtitleKey: "section.fullSiblings.hint",
       fields: [
         {
           heir: "full_brother",
-          label: "Full Brothers",
+          labelKey: "form.fullBrothers",
           max: 20,
           visible: true,
         },
         {
           heir: "full_sister",
-          label: "Full Sisters",
+          labelKey: "form.fullSisters",
           max: 20,
           visible: true,
         },
@@ -166,18 +165,18 @@ export function getFormSections(
     // Section 7: Paternal Half-Siblings
     {
       id: "paternal_siblings",
-      title: "Paternal Half-Siblings",
-      subtitle: "Same father, different mother",
+      titleKey: "section.paternalHalfSiblings",
+      subtitleKey: "section.paternalHalfSiblings.hint",
       fields: [
         {
           heir: "paternal_brother",
-          label: "Paternal Half-Brothers",
+          labelKey: "form.paternalHalfBrothers",
           max: 20,
           visible: true,
         },
         {
           heir: "paternal_sister",
-          label: "Paternal Half-Sisters",
+          labelKey: "form.paternalHalfSisters",
           max: 20,
           visible: true,
         },
@@ -189,18 +188,18 @@ export function getFormSections(
     // Section 8: Maternal Half-Siblings
     {
       id: "maternal_siblings",
-      title: "Maternal Half-Siblings",
-      subtitle: "Same mother, different father",
+      titleKey: "section.maternalHalfSiblings",
+      subtitleKey: "section.maternalHalfSiblings.hint",
       fields: [
         {
           heir: "maternal_brother",
-          label: "Maternal Half-Brothers",
+          labelKey: "form.maternalHalfBrothers",
           max: 20,
           visible: true,
         },
         {
           heir: "maternal_sister",
-          label: "Maternal Half-Sisters",
+          labelKey: "form.maternalHalfSisters",
           max: 20,
           visible: true,
         },
@@ -214,24 +213,24 @@ export function getFormSections(
     // Section 9: Extended Family (nephews, uncles, cousins)
     {
       id: "extended",
-      title: "Extended Family",
-      subtitle: "Only relevant if no closer heirs exist",
+      titleKey: "section.extendedFamily",
+      subtitleKey: "section.extendedFamily.hint",
       fields: [
         {
           heir: "full_nephew",
-          label: "Full Nephew (brother's son)",
+          labelKey: "form.fullNephew",
           max: 10,
           visible: !hasCloseResiduary,
         },
         {
           heir: "paternal_nephew",
-          label: "Paternal Nephew",
+          labelKey: "form.paternalNephew",
           max: 10,
           visible: !hasCloseResiduary && !hasHeir(input, "full_nephew"),
         },
         {
           heir: "full_uncle",
-          label: "Paternal Uncle (full)",
+          labelKey: "form.paternalUncleFull",
           max: 10,
           visible:
             !hasCloseResiduary &&
@@ -240,7 +239,7 @@ export function getFormSections(
         },
         {
           heir: "paternal_uncle",
-          label: "Paternal Uncle (half)",
+          labelKey: "form.paternalUncleHalf",
           max: 10,
           visible:
             !hasCloseResiduary &&
@@ -250,7 +249,7 @@ export function getFormSections(
         },
         {
           heir: "full_cousin",
-          label: "Full Cousin (uncle's son)",
+          labelKey: "form.fullCousin",
           max: 10,
           visible:
             !hasCloseResiduary &&
@@ -261,7 +260,7 @@ export function getFormSections(
         },
         {
           heir: "paternal_cousin",
-          label: "Paternal Cousin",
+          labelKey: "form.paternalCousin",
           max: 10,
           visible:
             !hasCloseResiduary &&

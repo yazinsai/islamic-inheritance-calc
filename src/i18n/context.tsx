@@ -3,7 +3,7 @@
 import { createContext, useContext, useCallback } from "react";
 import type { Locale } from "./config";
 
-type Messages = Record<string, string>;
+export type Messages = Record<string, string>;
 
 interface I18nContextValue {
   locale: Locale;
@@ -46,6 +46,12 @@ export function useTranslations() {
   );
 
   return t;
+}
+
+export function useMessages(): Messages {
+  const ctx = useContext(I18nContext);
+  if (!ctx) throw new Error("useMessages must be used within I18nProvider");
+  return ctx.messages;
 }
 
 export function useLocale(): Locale {
