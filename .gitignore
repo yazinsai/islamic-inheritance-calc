@@ -5,3 +5,6 @@ out/
 *.tsbuildinfo
 .env
 .env.local
+.claude/plans/
+fetch-test-cases.py
+test-cases-summary.md
