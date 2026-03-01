@@ -40,6 +40,8 @@
   --font-display: "Cormorant Garamond", "Georgia", serif;
   --font-body: "IBM Plex Sans", "Helvetica Neue", sans-serif;
   --font-mono: "IBM Plex Mono", "Menlo", monospace;
+  --font-display-ar: "Noto Naskh Arabic", "Noto Sans Arabic", serif;
+  --font-body-ar: "Noto Sans Arabic", "Noto Naskh Arabic", sans-serif;
 }
 
 /* Islamic geometric pattern as SVG background */
@@ -151,3 +153,20 @@ input[type="number"] {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-sand-400);
 }
+
+/* RTL Arabic/Urdu font overrides */
+.font-body-ar {
+  font-family: var(--font-body-ar);
+}
+
+.locale-rtl .font-display {
+  font-family: var(--font-display-ar);
+}
+
+/* RTL letter-spacing: Arabic doesn't use tracking */
+.locale-rtl .tracking-wider,
+.locale-rtl .tracking-tight {
+  letter-spacing: normal;
+}
+
+/* RTL: uppercase has no effect on Arabic, but keep for embedded Latin */
