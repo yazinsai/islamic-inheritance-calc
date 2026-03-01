@@ -8,6 +8,20 @@ import { useTranslations, useMessages, useLocale } from "@/i18n/context";
 import { locales, localeNames, isRtl, type Locale } from "@/i18n/config";
 import type { HeirInput } from "@/lib/calc";
 import Fraction from "fraction.js";
+import { Icon } from "@iconify/react";
+
+// ─── Section Icons (Solar Bold Duotone) ─────────────────────────────
+const sectionIcons: Record<string, string> = {
+  spouse: "solar:heart-bold-duotone",
+  children: "solar:users-group-two-rounded-bold-duotone",
+  grandchildren: "solar:users-group-rounded-bold-duotone",
+  parents: "solar:shield-user-bold-duotone",
+  grandparents: "solar:star-fall-minimalistic-2-bold-duotone",
+  full_siblings: "solar:people-nearby-bold-duotone",
+  paternal_siblings: "solar:people-nearby-bold-duotone",
+  maternal_siblings: "solar:people-nearby-bold-duotone",
+  extended: "solar:global-bold-duotone",
+};
 
 // ─── Number Localization ─────────────────────────────────────────────
 const easternArabic = "٠١٢٣٤٥٦٧٨٩";
@@ -105,10 +119,10 @@ function HeirCounter({
           disabled={value === 0}
           className="w-8 h-8 rounded-s-md bg-sand-100 hover:bg-sand-200 text-sand-600
                      disabled:opacity-30 disabled:cursor-default transition-colors
-                     flex items-center justify-center text-lg font-light select-none"
+                     flex items-center justify-center select-none"
           aria-label={t("aria.decrease", { label })}
         >
-          −
+          <Icon icon="solar:minus-circle-linear" className="text-lg" />
         </button>
         <div
           className="w-10 h-8 bg-white border-y border-sand-200 flex items-center
@@ -122,10 +136,10 @@ function HeirCounter({
           disabled={value >= field.max}
           className="w-8 h-8 rounded-e-md bg-sand-100 hover:bg-sand-200 text-sand-600
                      disabled:opacity-30 disabled:cursor-default transition-colors
-                     flex items-center justify-center text-lg font-light select-none"
+                     flex items-center justify-center select-none"
           aria-label={t("aria.increase", { label })}
         >
-          +
+          <Icon icon="solar:add-circle-linear" className="text-lg" />
         </button>
       </div>
     </div>
@@ -155,10 +169,14 @@ function FormSectionCard({
   t: (key: string, vars?: Record<string, string | number>) => string;
   locale: Locale;
 }) {
+  const sectionIcon = sectionIcons[section.id];
   return (
     <Collapse open={section.visible}>
       <div className="pb-4">
-        <div className="flex items-baseline gap-2 mb-1">
+        <div className="flex items-center gap-2 mb-1">
+          {sectionIcon && (
+            <Icon icon={sectionIcon} className="text-base text-sand-400 shrink-0" />
+          )}
           <h3 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
             {t(section.titleKey)}
           </h3>
@@ -230,7 +248,7 @@ function ShareRow({
         className="result-card py-3 px-4 flex items-center gap-3 opacity-50"
         style={{ animationDelay: `${index * 60}ms` }}
       >
-        <div className="w-2 h-2 rounded-full bg-sand-300 shrink-0" />
+        <Icon icon="solar:close-circle-bold" className="text-base text-sand-300 shrink-0" />
         <div className="min-w-0 flex-1">
           <div className="text-sm text-sand-500 line-through">
             {displayName}
@@ -355,9 +373,12 @@ function Results({
       {/* Summary header */}
       <div className="bg-white rounded-xl border border-sand-200/80 p-4">
         <div className="flex items-center justify-between mb-2">
-          <h2 className="font-display text-xl font-semibold text-sand-800">
-            {t("result.title")}
-          </h2>
+          <div className="flex items-center gap-2">
+            <Icon icon="solar:chart-square-bold-duotone" className="text-xl text-sage-500" />
+            <h2 className="font-display text-xl font-semibold text-sand-800">
+              {t("result.title")}
+            </h2>
+          </div>
           <span className="text-xs text-sand-400">{heirCountText}</span>
         </div>
         {specialCases.length > 0 && (
@@ -398,7 +419,8 @@ function Results({
       {/* Blocked heirs */}
       {blockedShares.length > 0 && (
         <details className="group">
-          <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none">
+          <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none flex items-center gap-1.5">
+            <Icon icon="solar:eye-closed-linear" className="text-sm" />
             {blockedCountText}
           </summary>
           <div className="mt-2 bg-white rounded-xl border border-sand-200/80 divide-y divide-sand-50 overflow-hidden">
@@ -425,7 +447,8 @@ function Results({
       {/* Calculation steps */}
       {result.steps.length > 0 && (
         <details className="group">
-          <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none">
+          <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none flex items-center gap-1.5">
+            <Icon icon="solar:list-check-minimalistic-bold" className="text-sm" />
             {t("result.steps", { count: result.steps.length })}
           </summary>
           <div className="mt-2 bg-white rounded-xl border border-sand-200/80 p-4">
@@ -542,9 +565,12 @@ export default function Home() {
       <main className="max-w-lg mx-auto px-4 py-6 space-y-6 pb-24">
         {/* Deceased info */}
         <div>
-          <h2 className="text-sm font-semibold text-sand-600 uppercase tracking-wider mb-2">
-            {t("deceased.title")}
-          </h2>
+          <div className="flex items-center gap-2 mb-2">
+            <Icon icon="solar:user-circle-bold-duotone" className="text-lg text-sand-400" />
+            <h2 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
+              {t("deceased.title")}
+            </h2>
+          </div>
           <div className="bg-white rounded-xl border border-sand-200/80 p-4 space-y-4">
             {/* Gender */}
             <div>
@@ -555,12 +581,16 @@ export default function Home() {
                     key={g}
                     type="button"
                     onClick={() => handleGenderChange(g)}
-                    className={`py-2.5 rounded-lg text-sm font-medium transition-all ${
+                    className={`py-2.5 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-1.5 ${
                       deceasedGender === g
                         ? "bg-sage-600 text-white shadow-sm"
                         : "bg-sand-100 text-sand-500 hover:bg-sand-200"
                     }`}
                   >
+                    <Icon
+                      icon={g === "male" ? "solar:user-rounded-bold" : "solar:user-rounded-bold"}
+                      className={`text-base ${deceasedGender === g ? "opacity-90" : "opacity-50"}`}
+                    />
                     {g === "male" ? t("deceased.male") : t("deceased.female")}
                   </button>
                 ))}
@@ -574,6 +604,10 @@ export default function Home() {
                 <span className="text-sand-300">{t("deceased.estate.optional")}</span>
               </label>
               <div className="relative">
+                <Icon
+                  icon="solar:wallet-money-bold-duotone"
+                  className="absolute start-3 top-1/2 -translate-y-1/2 text-lg text-sand-400 pointer-events-none"
+                />
                 <input
                   type="number"
                   value={estateAmount}
@@ -582,7 +616,7 @@ export default function Home() {
                   min="0"
                   step="any"
                   dir="ltr"
-                  className="w-full bg-sand-50 border border-sand-200 rounded-lg px-4 py-2.5
+                  className="w-full bg-sand-50 border border-sand-200 rounded-lg ps-10 pe-4 py-2.5
                              text-sm font-mono text-sand-800 placeholder:text-sand-300
                              focus:outline-none focus:ring-2 focus:ring-sage-400/30 focus:border-sage-400
                              transition-all"
@@ -598,15 +632,19 @@ export default function Home() {
         {/* Heir sections */}
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
-              {t("heirs.title")}
-            </h2>
+            <div className="flex items-center gap-2">
+              <Icon icon="solar:users-group-rounded-bold-duotone" className="text-lg text-sand-400" />
+              <h2 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
+                {t("heirs.title")}
+              </h2>
+            </div>
             {hasAnyHeirs && (
               <button
                 type="button"
                 onClick={handleReset}
-                className="text-xs text-sand-400 hover:text-sand-600 transition-colors"
+                className="text-xs text-sand-400 hover:text-sand-600 transition-colors flex items-center gap-1"
               >
+                <Icon icon="solar:restart-bold" className="text-sm" />
                 {t("heirs.reset")}
               </button>
             )}
@@ -635,6 +673,10 @@ export default function Home() {
         {/* Empty state */}
         {!hasAnyHeirs && (
           <div className="text-center py-8">
+            <Icon
+              icon="solar:hand-shake-bold-duotone"
+              className="text-4xl text-sand-300 mx-auto mb-3"
+            />
             <p className="text-sand-400 text-sm">
               {t("heirs.empty")}
             </p>
@@ -645,10 +687,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="fixed bottom-0 inset-x-0 bg-sand-50/90 backdrop-blur-sm border-t border-sand-200/60">
         <div className="max-w-lg mx-auto px-4 py-3">
-          <p className="text-[10px] text-sand-400 text-center leading-relaxed">
-            {t("footer.line1")}
-            <br />
-            {t("footer.line2")}
+          <p className="text-[10px] text-sand-400 text-center leading-relaxed flex items-center justify-center gap-1.5 flex-wrap">
+            <Icon icon="solar:info-circle-linear" className="text-xs shrink-0" />
+            <span>{t("footer.line1")} {t("footer.line2")}</span>
           </p>
         </div>
       </footer>

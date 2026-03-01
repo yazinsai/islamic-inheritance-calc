@@ -90,21 +90,34 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* Smooth section transitions */
-.section-enter {
-  animation: sectionIn 0.35s ease-out;
+/* Animated collapse/expand for sections and fields */
+.collapse-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.3s ease, opacity 0.25s ease;
 }
 
-@keyframes sectionIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.collapse-wrapper.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
+
+.collapse-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Dividers between open field items only */
+.collapse-fields > .collapse-wrapper {
+  border-top-color: transparent;
+  transition: grid-template-rows 0.3s ease, opacity 0.25s ease, border-color 0.2s ease;
+}
+
+.collapse-fields > .collapse-wrapper.open + .collapse-wrapper.open {
+  border-top: 1px solid var(--color-sand-100);
+}
+
 
 /* Results card entrance */
 .result-card {
