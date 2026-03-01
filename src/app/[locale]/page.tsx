@@ -9,28 +9,46 @@ import { locales, localeNames, isRtl, type Locale } from "@/i18n/config";
 import type { HeirInput } from "@/lib/calc";
 import Fraction from "fraction.js";
 
+// ─── Number Localization ─────────────────────────────────────────────
+const easternArabic = "٠١٢٣٤٥٦٧٨٩";
+const easternUrdu = "۰۱۲۳۴۵۶۷۸۹";
+
+function localizeDigits(str: string, locale: Locale): string {
+  const digits = locale === "ar" ? easternArabic : locale === "ur" ? easternUrdu : null;
+  if (!digits) return str;
+  return str
+    .replace(/[0-9]/g, (d) => digits[parseInt(d)])
+    .replace(/\./g, "٫")
+    .replace(/%/g, "٪");
+}
+
 // ─── Fraction Display ────────────────────────────────────────────────
-function FractionDisplay({ value }: { value: Fraction }) {
+function FractionDisplay({ value, locale }: { value: Fraction; locale: Locale }) {
   const str = value.toFraction();
-  if (!str.includes("/")) return <span className="font-mono text-sm">{str}</span>;
+  if (!str.includes("/")) {
+    return <span className="font-mono text-sm">{localizeDigits(str, locale)}</span>;
+  }
   const [num, den] = str.split("/");
   return (
     <span className="fraction">
-      <span className="num">{num}</span>
-      <span className="den">{den}</span>
+      <span className="num">{localizeDigits(num, locale)}</span>
+      <span className="den">{localizeDigits(den, locale)}</span>
     </span>
   );
 }
 
-function toPercent(f: Fraction): string {
-  return (f.valueOf() * 100).toFixed(2).replace(/\.?0+$/, "") + "%";
+function toPercent(f: Fraction, locale: Locale): string {
+  const raw = (f.valueOf() * 100).toFixed(2).replace(/\.?0+$/, "") + "%";
+  return localizeDigits(raw, locale);
 }
 
-function formatCurrency(n: number): string {
-  if (n === 0) return "0";
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(2).replace(/\.?0+$/, "") + "M";
-  if (n >= 1_000) return (n / 1_000).toFixed(2).replace(/\.?0+$/, "") + "K";
-  return n.toFixed(2).replace(/\.?0+$/, "");
+function formatCurrency(n: number, locale: Locale): string {
+  let raw: string;
+  if (n === 0) raw = "0";
+  else if (n >= 1_000_000) raw = (n / 1_000_000).toFixed(2).replace(/\.?0+$/, "") + "M";
+  else if (n >= 1_000) raw = (n / 1_000).toFixed(2).replace(/\.?0+$/, "") + "K";
+  else raw = n.toFixed(2).replace(/\.?0+$/, "");
+  return localizeDigits(raw, locale);
 }
 
 // ─── Language Switcher ───────────────────────────────────────────────
@@ -68,11 +86,13 @@ function HeirCounter({
   value,
   onChange,
   t,
+  locale,
 }: {
   field: FormField;
   value: number;
   onChange: (heir: string, val: number) => void;
   t: (key: string, vars?: Record<string, string | number>) => string;
+  locale: Locale;
 }) {
   const label = t(field.labelKey);
   return (
@@ -94,7 +114,7 @@ function HeirCounter({
           className="w-10 h-8 bg-white border-y border-sand-200 flex items-center
                       justify-center text-sm font-mono text-sand-800 select-none"
         >
-          {value}
+          {localizeDigits(String(value), locale)}
         </div>
         <button
           type="button"
@@ -112,43 +132,55 @@ function HeirCounter({
   );
 }
 
+// ─── Animated Collapse Wrapper ───────────────────────────────────────
+function Collapse({ open, children }: { open: boolean; children: React.ReactNode }) {
+  return (
+    <div className={`collapse-wrapper${open ? " open" : ""}`}>
+      <div className="collapse-inner">{children}</div>
+    </div>
+  );
+}
+
 // ─── Form Section ────────────────────────────────────────────────────
 function FormSectionCard({
   section,
   input,
   onChange,
   t,
+  locale,
 }: {
   section: FormSection;
   input: HeirInput;
   onChange: (heir: string, val: number) => void;
   t: (key: string, vars?: Record<string, string | number>) => string;
+  locale: Locale;
 }) {
-  const visibleFields = section.fields.filter((f) => f.visible);
-  if (visibleFields.length === 0) return null;
-
   return (
-    <div className="section-enter">
-      <div className="flex items-baseline gap-2 mb-1">
-        <h3 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
-          {t(section.titleKey)}
-        </h3>
-        {section.subtitleKey && (
-          <span className="text-xs text-sand-400">{t(section.subtitleKey)}</span>
-        )}
+    <Collapse open={section.visible}>
+      <div className="pb-4">
+        <div className="flex items-baseline gap-2 mb-1">
+          <h3 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
+            {t(section.titleKey)}
+          </h3>
+          {section.subtitleKey && (
+            <span className="text-xs text-sand-400">{t(section.subtitleKey)}</span>
+          )}
+        </div>
+        <div className="bg-white rounded-xl border border-sand-200/80 px-4 collapse-fields">
+          {section.fields.map((field) => (
+            <Collapse key={field.heir} open={field.visible}>
+              <HeirCounter
+                field={field}
+                value={input[field.heir as keyof HeirInput] ?? 0}
+                onChange={onChange}
+                t={t}
+                locale={locale}
+              />
+            </Collapse>
+          ))}
+        </div>
       </div>
-      <div className="bg-white rounded-xl border border-sand-200/80 px-4 divide-y divide-sand-100">
-        {visibleFields.map((field) => (
-          <HeirCounter
-            key={field.heir}
-            field={field}
-            value={input[field.heir as keyof HeirInput] ?? 0}
-            onChange={onChange}
-            t={t}
-          />
-        ))}
-      </div>
-    </div>
+    </Collapse>
   );
 }
 
@@ -164,6 +196,7 @@ function ShareRow({
   index,
   t,
   messages,
+  locale,
 }: {
   heir: string;
   count: number;
@@ -175,6 +208,7 @@ function ShareRow({
   index: number;
   t: (key: string, vars?: Record<string, string | number>) => string;
   messages: Record<string, string>;
+  locale: Locale;
 }) {
   const pct = totalShare.valueOf() * 100;
   const amount = estateAmount * totalShare.valueOf();
@@ -200,7 +234,7 @@ function ShareRow({
         <div className="min-w-0 flex-1">
           <div className="text-sm text-sand-500 line-through">
             {displayName}
-            {count > 1 && <span className="text-xs ms-1">×{count}</span>}
+            {count > 1 && <span className="text-xs ms-1">×{localizeDigits(String(count), locale)}</span>}
           </div>
           <p className="text-xs text-sand-400 mt-0.5 leading-snug">{explanationText}</p>
         </div>
@@ -229,7 +263,7 @@ function ShareRow({
             </span>
             {count > 1 && (
               <span className="text-xs bg-sand-100 text-sand-500 px-1.5 py-0.5 rounded-full">
-                ×{count}
+                ×{localizeDigits(String(count), locale)}
               </span>
             )}
             <span
@@ -248,9 +282,9 @@ function ShareRow({
         </div>
         <div className="text-end shrink-0">
           <div className="text-lg font-display font-semibold text-sand-800">
-            <FractionDisplay value={totalShare} />
+            <FractionDisplay value={totalShare} locale={locale} />
           </div>
-          <div className="text-xs text-sand-400 mt-0.5">{toPercent(totalShare)}</div>
+          <div className="text-xs text-sand-400 mt-0.5">{toPercent(totalShare, locale)}</div>
         </div>
       </div>
 
@@ -269,11 +303,11 @@ function ShareRow({
       {estateAmount > 0 && (
         <div className="flex items-center justify-between text-xs text-sand-500">
           <span>
-            {t("result.total")}: <span className="font-mono font-medium text-sand-700">{formatCurrency(amount)}</span>
+            {t("result.total")}: <span className="font-mono font-medium text-sand-700">{formatCurrency(amount, locale)}</span>
           </span>
           {count > 1 && (
             <span>
-              {t("result.each")}: <span className="font-mono font-medium text-sand-700">{formatCurrency(perPerson)}</span>
+              {t("result.each")}: <span className="font-mono font-medium text-sand-700">{formatCurrency(perPerson, locale)}</span>
             </span>
           )}
         </div>
@@ -288,11 +322,13 @@ function Results({
   estateAmount,
   t,
   messages,
+  locale,
 }: {
   result: CalculationResult;
   estateAmount: number;
   t: (key: string, vars?: Record<string, string | number>) => string;
   messages: Record<string, string>;
+  locale: Locale;
 }) {
   const activeShares = result.shares.filter((s) => s.totalShare.valueOf() > 0);
   const blockedShares = result.shares.filter((s) => s.totalShare.valueOf() === 0);
@@ -354,6 +390,7 @@ function Results({
             index={i}
             t={t}
             messages={messages}
+            locale={locale}
           />
         ))}
       </div>
@@ -378,6 +415,7 @@ function Results({
                 index={i}
                 t={t}
                 messages={messages}
+                locale={locale}
               />
             ))}
           </div>
@@ -395,7 +433,7 @@ function Results({
               {result.steps.map((step, i) => (
                 <li key={i} className="text-xs text-sand-600 leading-relaxed flex gap-2">
                   <span className="text-sand-300 font-mono shrink-0 w-4 text-end">
-                    {i + 1}.
+                    {localizeDigits(`${i + 1}`, locale)}.
                   </span>
                   <span>{resolveExplanation(step, messages)}</span>
                 </li>
@@ -558,8 +596,8 @@ export default function Home() {
         </div>
 
         {/* Heir sections */}
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
+        <div>
+          <div className="flex items-center justify-between mb-4">
             <h2 className="text-sm font-semibold text-sand-600 uppercase tracking-wider">
               {t("heirs.title")}
             </h2>
@@ -574,15 +612,14 @@ export default function Home() {
             )}
           </div>
 
-          {sections
-            .filter((s) => s.visible)
-            .map((section) => (
+          {sections.map((section) => (
               <FormSectionCard
                 key={section.id}
                 section={section}
                 input={input}
                 onChange={handleHeirChange}
                 t={t}
+                locale={locale}
               />
             ))}
         </div>
@@ -591,7 +628,7 @@ export default function Home() {
         {result && hasAnyHeirs && (
           <>
             <div className="geometric-border" />
-            <Results result={result} estateAmount={estate} t={t} messages={messages} />
+            <Results result={result} estateAmount={estate} t={t} messages={messages} locale={locale} />
           </>
         )}
 

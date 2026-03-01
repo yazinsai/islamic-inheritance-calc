@@ -167,7 +167,7 @@
   "explain.umariyyah.motherAfterWife": "الأم تأخذ 1/3 من الباقي بعد نصيب الزوجة = 1/3 × 3/4 = 1/4 (العُمَريّة، القاعدة 21).",
   "explain.umariyyah.fatherAfterWife": "الأب يأخذ الباقي بعد الزوجة والأم = 1/2 (العُمَريّة، القاعدة 21).",
 
-  "explain.blockedByFather": "{heir} محجوب بوجود الأب (القاعدة 13ج).",
+  "explain.blockedByFather": "{heir} — محجوب/ة بوجود الأب (القاعدة 13ج).",
   "explain.maternalGrandmother.blockedByMotherSpecial": "الجدّة لأم محجوبة بوجود الأم.",
 
   "explain.mushtaraka.fullBrothers": "الإخوة الأشقاء يتشاركون بالتساوي مع الإخوة لأم في نصيبهم {fraction} (المشتركة، القاعدة 22).",
@@ -184,20 +184,20 @@
   "explain.grandfatherSiblings.grandfather": "الجدّ يأخذ {fraction} بالطريقة {method} (حالة الجدّ مع الإخوة، القاعدة 23).",
   "explain.grandfatherSiblings.fullSisterPrescribed": "الأخت الشقيقة تأخذ فرضها {fraction} (القاعدة 10).",
   "explain.grandfatherSiblings.paternalSisterPrescribed": "الأخت لأب تأخذ فرضها {fraction} (القاعدة 11).",
-  "explain.grandfatherSiblings.residuary": "{heir} يأخذ {fraction} تعصيباً في حالة الجدّ مع الإخوة.",
-  "explain.grandfatherSiblings.nothing": "{heir} لا يأخذ شيئاً بعد نصيب الجدّ.",
+  "explain.grandfatherSiblings.residuary": "نصيب {heir} تعصيباً: {fraction} (حالة الجدّ مع الإخوة).",
+  "explain.grandfatherSiblings.nothing": "لا نصيب لـ{heir} بعد حصة الجدّ.",
 
-  "explain.noShare": "{heir} لا يستحق نصيباً في هذه الحالة.",
+  "explain.noShare": "لا نصيب لـ{heir} في هذه الحالة.",
 
   "step.umariyyah": "تم اكتشاف حالة العُمَريّة (أب + أم + زوج/زوجة فقط). تطبيق التوزيع الخاص (القاعدة 21).",
-  "step.heirGets": "{heir} يأخذ {fraction}.",
-  "step.prescribed": "{heir} يأخذ فرضه {fraction}.",
-  "step.blocked": "{heir} محجوب ({explanation}).",
+  "step.heirGets": "نصيب {heir}: {fraction}.",
+  "step.prescribed": "فرض {heir}: {fraction}.",
+  "step.blocked": "{heir} — محجوب/ة ({explanation}).",
   "step.grandfatherSiblings": "تم تطبيق حالة الجدّ مع الإخوة (القاعدة 23).",
   "step.awl": "مجموع الأنصبة يتجاوز 100%. تطبيق العول (تخفيض نسبي، القاعدة 18).",
   "step.akdariyyah": "الأكدرية: أنصبة الجدّ والأخوات أُعيد توزيعها بنسبة 2:1 (القاعدة 18أ).",
   "step.distributeResiduary": "توزيع الباقي {fraction} تعصيباً (القاعدة 14).",
-  "step.residuary": "{heir} يأخذ {fraction} تعصيباً (القاعدة 14).",
+  "step.residuary": "نصيب {heir} تعصيباً: {fraction} (القاعدة 14).",
   "step.mushtaraka": "تم تطبيق المشتركة: الإخوة الأشقاء يتشاركون مع الإخوة لأم (القاعدة 22).",
   "step.radd": "مجموع الأنصبة أقل من 100% بلا عصبة. تطبيق الردّ (زيادة نسبية، القاعدة 19).",
 
