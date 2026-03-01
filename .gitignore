@@ -1,6 +1,7 @@
 node_modules/
 .next/
 .beads/
+.worktrees/
 out/
 *.tsbuildinfo
 .env
