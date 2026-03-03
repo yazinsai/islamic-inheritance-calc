@@ -105,6 +105,7 @@
 
   "footer.line1": "Basé sur les versets coraniques et la Sunnah. Vérifié sur 133 cas de test d'érudits.",
   "footer.line2": "Consultez un érudit qualifié pour les cas complexes.",
+  "footer.opensource": "Open-source — gratuit à utiliser et intégrer",
 
   "aria.decrease": "Diminuer {label}",
   "aria.increase": "Augmenter {label}",

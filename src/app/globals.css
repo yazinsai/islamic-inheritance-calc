@@ -65,15 +65,26 @@
   --color-sage-50: #161c14;
   --color-sage-100: #1c2a1a;
   --color-sage-200: #283d26;
+  --color-sage-300: #4a6843;
   --color-sage-400: #8aab80;
   --color-sage-500: #72a066;
   --color-sage-600: #608855;
+  --color-sage-700: #8aab80;
+  --color-sage-800: #a3c49a;
+  --color-sage-900: #c0d8ba;
+  --color-sage-950: #dae8d6;
 
   --color-gold-50: #1c1810;
   --color-gold-100: #28220f;
   --color-gold-200: #3d3018;
+  --color-gold-300: #b8892a;
+  --color-gold-400: #d4a030;
   --color-gold-500: #e6a838;
+  --color-gold-600: #e6b848;
   --color-gold-700: #d49a2a;
+  --color-gold-800: #f0cc70;
+  --color-gold-900: #f5dda0;
+  --color-gold-950: #faf0d5;
 
   --color-card: #1e1b17;
 }
@@ -209,6 +220,11 @@ input[type="number"] {
   background: var(--color-sand-400);
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sand-300) var(--color-sand-100);
+}
+
 /* RTL Arabic/Urdu font overrides */
 .font-body-ar {
   font-family: var(--font-body-ar);
@@ -225,3 +241,13 @@ input[type="number"] {
 }
 
 /* RTL: uppercase has no effect on Arabic, but keep for embedded Latin */
+
+@media (prefers-reduced-motion: reduce) {
+  .result-card,
+  .share-bar {
+    animation: none !important;
+  }
+  .collapse-wrapper {
+    transition: none !important;
+  }
+}

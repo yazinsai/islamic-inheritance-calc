@@ -105,6 +105,7 @@
 
   "footer.line1": "Based on Quranic verses and Sunnah. Verified against 133 scholarly test cases.",
   "footer.line2": "Consult a qualified scholar for complex cases.",
+  "footer.opensource": "Open-source — free to use & embed",
 
   "aria.decrease": "Decrease {label}",
   "aria.increase": "Increase {label}",

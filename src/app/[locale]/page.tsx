@@ -72,11 +72,11 @@ function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
       {locales.map((loc, i) => (
         <span key={loc} className="flex items-center">
           {i > 0 && (
-            <span className="text-gold-400 text-[6px] mx-1.5 select-none">◆</span>
+            <span className="text-gold-400 text-[8px] mx-1 select-none">◆</span>
           )}
           <a
             href={`/${loc}`}
-            className={`text-[11px] transition-colors relative pb-0.5 ${
+            className={`text-sm py-2 px-1 transition-colors relative pb-0.5 ${
               loc === currentLocale
                 ? "text-sand-800 font-medium"
                 : "text-sand-400 hover:text-sand-600"
@@ -146,8 +146,8 @@ function ThemeToggle() {
     <button
       type="button"
       onClick={cycle}
-      className="absolute top-4 end-4 w-8 h-8 rounded-lg bg-sand-100/80 hover:bg-sand-200
-                 text-sand-500 hover:text-sand-600 transition-colors flex items-center justify-center z-10"
+      className="absolute top-4 end-4 w-11 h-11 rounded-lg bg-sand-100/80 hover:bg-sand-200
+                 text-sand-500 hover:text-sand-600 transition-colors focus-visible:ring-2 focus-visible:ring-sage-400/40 focus-visible:ring-offset-1 flex items-center justify-center z-10"
       aria-label={`Theme: ${mode}`}
     >
       <Icon icon={icon} className="text-lg" />
@@ -178,15 +178,15 @@ function HeirCounter({
           type="button"
           onClick={() => onChange(field.heir, Math.max(0, value - 1))}
           disabled={value === 0}
-          className="w-8 h-8 rounded-s-md bg-sand-100 hover:bg-sand-200 text-sand-600
-                     disabled:opacity-30 disabled:cursor-default transition-colors
+          className="w-11 h-11 rounded-s-md bg-sand-100 hover:bg-sand-200 text-sand-600
+                     disabled:opacity-30 disabled:cursor-default transition-colors focus-visible:ring-2 focus-visible:ring-sage-400/40 focus-visible:ring-offset-1
                      flex items-center justify-center select-none"
           aria-label={t("aria.decrease", { label })}
         >
           <Icon icon="solar:minus-circle-linear" className="text-lg" />
         </button>
         <div
-          className="w-10 h-8 bg-card border-y border-sand-200 flex items-center
+          className="w-12 h-11 bg-card border-y border-sand-200 flex items-center
                       justify-center text-sm font-mono text-sand-800 select-none"
         >
           {localizeDigits(String(value), locale)}
@@ -195,8 +195,8 @@ function HeirCounter({
           type="button"
           onClick={() => onChange(field.heir, Math.min(field.max, value + 1))}
           disabled={value >= field.max}
-          className="w-8 h-8 rounded-e-md bg-sand-100 hover:bg-sand-200 text-sand-600
-                     disabled:opacity-30 disabled:cursor-default transition-colors
+          className="w-11 h-11 rounded-e-md bg-sand-100 hover:bg-sand-200 text-sand-600
+                     disabled:opacity-30 disabled:cursor-default transition-colors focus-visible:ring-2 focus-visible:ring-sage-400/40 focus-visible:ring-offset-1
                      flex items-center justify-center select-none"
           aria-label={t("aria.increase", { label })}
         >
@@ -480,7 +480,7 @@ function Results({
       {/* Blocked heirs */}
       {blockedShares.length > 0 && (
         <details className="group">
-          <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none flex items-center gap-1.5">
+          <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none flex items-center gap-1.5 py-3">
             <Icon icon="solar:eye-closed-linear" className="text-sm" />
             {blockedCountText}
           </summary>
@@ -508,7 +508,7 @@ function Results({
       {/* Calculation steps */}
       {result.steps.length > 0 && (
         <details className="group">
-          <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none flex items-center gap-1.5">
+          <summary className="text-xs text-sand-400 cursor-pointer hover:text-sand-500 transition-colors select-none flex items-center gap-1.5 py-3">
             <Icon icon="solar:list-check-minimalistic-bold" className="text-sm" />
             {t("result.steps", { count: result.steps.length })}
           </summary>
@@ -624,7 +624,7 @@ export default function Home() {
       </header>
 
       {/* Content */}
-      <main className="max-w-lg mx-auto px-4 py-6 space-y-6 pb-24">
+      <main className="max-w-lg mx-auto px-4 py-6 space-y-6 pb-6">
         {/* Deceased info */}
         <div>
           <div className="flex items-center gap-2 mb-2">
@@ -643,14 +643,15 @@ export default function Home() {
                     key={g}
                     type="button"
                     onClick={() => handleGenderChange(g)}
-                    className={`py-2.5 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-1.5 ${
+                    aria-pressed={deceasedGender === g}
+                    className={`py-2.5 rounded-lg text-sm font-medium transition-all focus-visible:ring-2 focus-visible:ring-sage-400/40 focus-visible:ring-offset-1 flex items-center justify-center gap-1.5 ${
                       deceasedGender === g
                         ? "bg-sage-600 text-white shadow-sm"
                         : "bg-sand-100 text-sand-500 hover:bg-sand-200"
                     }`}
                   >
                     <Icon
-                      icon={g === "male" ? "solar:user-rounded-bold" : "solar:user-rounded-bold"}
+                      icon={g === "male" ? "solar:user-rounded-bold" : "solar:women-rounded-bold-duotone"}
                       className={`text-base ${deceasedGender === g ? "opacity-90" : "opacity-50"}`}
                     />
                     {g === "male" ? t("deceased.male") : t("deceased.female")}
@@ -674,6 +675,7 @@ export default function Home() {
                   type="number"
                   value={estateAmount}
                   onChange={(e) => setEstateAmount(e.target.value)}
+                  onKeyDown={(e) => { if (e.key === '-' || e.key === 'e') e.preventDefault(); }}
                   placeholder="0"
                   min="0"
                   step="any"
@@ -704,7 +706,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={handleReset}
-                className="text-xs text-sand-400 hover:text-sand-600 transition-colors flex items-center gap-1"
+                className="text-xs text-sand-400 hover:text-sand-600 transition-colors focus-visible:ring-2 focus-visible:ring-sage-400/40 focus-visible:ring-offset-1 flex items-center gap-1"
               >
                 <Icon icon="solar:restart-bold" className="text-sm" />
                 {t("heirs.reset")}
@@ -737,7 +739,7 @@ export default function Home() {
           <div className="text-center py-8">
             <Icon
               icon="solar:hand-shake-bold-duotone"
-              className="text-4xl text-sand-300 mx-auto mb-3"
+              className="text-3xl text-sand-300 mx-auto mb-3"
             />
             <p className="text-sand-400 text-sm">
               {t("heirs.empty")}
@@ -747,8 +749,17 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="fixed bottom-0 inset-x-0 bg-sand-50/90 backdrop-blur-sm border-t border-sand-200/60">
-        <div className="max-w-lg mx-auto px-4 py-3">
+      <footer className="bg-sand-50/90 backdrop-blur-sm border-t border-sand-200/60">
+        <div className="max-w-lg mx-auto px-4 py-4 space-y-3">
+          <a
+            href="https://github.com/yazinsai/islamic-inheritance-calc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 text-xs text-sand-500 hover:text-sand-700 transition-colors group"
+          >
+            <Icon icon="mdi:github" className="text-base group-hover:scale-110 transition-transform" />
+            <span>{t("footer.opensource")}</span>
+          </a>
           <p className="text-[10px] text-sand-400 text-center leading-relaxed flex items-center justify-center gap-1.5 flex-wrap">
             <Icon icon="solar:info-circle-linear" className="text-xs shrink-0" />
             <span>{t("footer.line1")} {t("footer.line2")}</span>
